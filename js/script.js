@@ -590,7 +590,7 @@ window.addEventListener('load', function (event) {
       mediaQuery_1024.matches && addAttributeVideo();
       function addAttributeVideo() {
          VIDEO_ELEMENT.forEach((e) => {
-            e.play();
+            e.play()
          })
       }
    }

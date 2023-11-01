@@ -31,9 +31,6 @@ body {
 }
 
 .wrapper {
-  -webkit-transform: translate(0);
-  -ms-transform: translate(0);
-  transform: translate(0);
   min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,6 +51,7 @@ body {
 }
 
 @media (min-width:1024px) {
+
   body:has(#form-card__button) .wrapper {
     padding-bottom: 0;
   }
@@ -761,15 +759,15 @@ a:hover .hover-line-change::before {
 .header__menu-shell {
   padding: 0 15px;
   position: absolute;
-  top: 47px;
+  top: calc(var(--height-banner-sale, 0px) + var(--height-header, 0px) + 1px);
   left: 0;
   z-index: 250;
   -webkit-transform: translateX(120%);
   -ms-transform: translateX(120%);
   transform: translateX(120%);
-  width: 100%;
-  height: 100%;
-  max-height: calc(100vh - 70px);
+  width: 100vw;
+  height: calc(100vh - var(--height-header, 0px));
+  max-height: calc(100vh - var(--height-banner-sale, 0px));
   overflow-y: auto;
   -webkit-transition: -webkit-transform 0.22s;
   transition: -webkit-transform 0.22s;
@@ -3161,6 +3159,8 @@ a:hover .hover-line-change::before {
     -webkit-column-gap: 15px;
     -moz-column-gap: 15px;
     column-gap: 15px;
+    width: 100%;
+    height: auto;
     overflow: visible;
   }
 
@@ -4145,7 +4145,8 @@ a:hover .hover-line-change::before {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100vw;
-  height: calc(100vh - var(--height-banner-sale));
+  /*  height: calc(100vh - var(--height-banner-sale)); */
+  height: 100vh;
   background-color: var(--color-white);
   font-size: var(--font-16);
   overflow-y: auto;

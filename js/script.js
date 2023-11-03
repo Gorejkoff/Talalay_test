@@ -586,13 +586,6 @@ window.addEventListener('load', function (event) {
             event.target.closest('.video__element').play();
          }
       })
-      /*       const VIDEO_ELEMENT = document.querySelectorAll('.video__element');
-            mediaQuery_1024.matches && addAttributeVideo();
-            function addAttributeVideo() {
-               VIDEO_ELEMENT.forEach((e) => {
-                e.play()
-               })
-            } */
    }
 
 })

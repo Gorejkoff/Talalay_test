@@ -32,6 +32,9 @@ window.addEventListener('load', function (event) {
    const CARD_SLIDER = document.querySelector('.card-template__slider');
    const CARD_SLIDER_WRAPPER = document.querySelector('.card-template__wrapper');
    const CARD_SLIDER_ITEM = document.querySelectorAll('.card-template__item');
+   const BUYERS_SLIDER = document.querySelector('.buyers__swiper');
+   const BUYERS_SLIDER_WRAPPER = document.querySelector('.buyers__swiper .slider-version__list');
+   const BUYERS_SLIDER_ITEM = document.querySelectorAll('.buyers__swiper .slider-staps__item');
    const BURGER_BUTTON = document.querySelector('#burger-button');
    const BURGER_MENU = document.querySelector('#burger-menu');
    const HEADER_MENU_ITEM = document.querySelectorAll('.header__menu-item');
@@ -46,7 +49,6 @@ window.addEventListener('load', function (event) {
    const FILTER_CATALOG_TITLE = document.querySelector('.filter__catalog .filter__content-title');
    const FILTER_CATALOG_CONTENT = document.querySelector('.filter__catalog .filter__content');
    const FILTER_CATALOG_LIST = document.querySelector('.filter__catalog-list');
-
    const LIST_LEFT = document.querySelector('.list-card__left');
    const FILTER_BLOCK = document.querySelector('.filter__block');
 
@@ -236,6 +238,21 @@ window.addEventListener('load', function (event) {
          spaceBetween: 10,
       });
    }
+   if (document.querySelector('.buyers__swiper')) {
+      const swiper = new Swiper('.buyers__swiper', {
+         keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+         },
+         speed: 300,
+         slidesPerView: 4,
+         spaceBetween: 15,
+         navigation: {
+            nextEl: '.buyers-next',
+            prevEl: '.buyers-prev',
+         },
+      });
+   }
 
    function initSlider(media, slider, sliderBody, sliderItem) {
       const hasSwiper = slider.classList.contains('swiper');
@@ -315,6 +332,7 @@ window.addEventListener('load', function (event) {
       BRAND_MISSION_SLIDER && initSlider(mediaQuery_767.matches, BRAND_MISSION_SLIDER, BRAND_MISSION_SLIDER_BODY, BRAND_MISSION_SLIDER_ITEM);
       TEAM_SLIDER && initSlider(mediaQuery_767.matches, TEAM_SLIDER, TEAM_SLIDER_BODY, TEAM_SLIDER_ITEM);
       CARD_SLIDER && initSlider(mediaQuery_1024.matches, CARD_SLIDER, CARD_SLIDER_WRAPPER, CARD_SLIDER_ITEM);
+      BUYERS_SLIDER && initSlider(!mediaQuery_1024.matches, BUYERS_SLIDER, BUYERS_SLIDER_WRAPPER, BUYERS_SLIDER_ITEM);
       FORM_CARD_BUTTON && moveButtonCardSubmit(mediaQuery_1024.matches);
       FILTER_CATALOG && mediaQuery_1024.matches && moveUpCatalog();
       FILTER_CATALOG && !mediaQuery_1024.matches && moveBackCatalog();
@@ -324,6 +342,7 @@ window.addEventListener('load', function (event) {
    BRAND_MISSION_SLIDER && initSlider(mediaQuery_767.matches, BRAND_MISSION_SLIDER, BRAND_MISSION_SLIDER_BODY, BRAND_MISSION_SLIDER_ITEM);
    TEAM_SLIDER && initSlider(mediaQuery_767.matches, TEAM_SLIDER, TEAM_SLIDER_BODY, TEAM_SLIDER_ITEM);
    CARD_SLIDER && initSlider(mediaQuery_1024.matches, CARD_SLIDER, CARD_SLIDER_WRAPPER, CARD_SLIDER_ITEM);
+   BUYERS_SLIDER && initSlider(!mediaQuery_1024.matches, BUYERS_SLIDER, BUYERS_SLIDER_WRAPPER, BUYERS_SLIDER_ITEM);
    FORM_CARD_BUTTON && moveButtonCardSubmit(mediaQuery_1024.matches);
    FILTER_CATALOG && mediaQuery_1024.matches && moveUpCatalog();
    FILTER_CATALOG && !mediaQuery_1024.matches && moveBackCatalog();
@@ -480,15 +499,20 @@ window.addEventListener('load', function (event) {
       window.addEventListener('resize', () => setPosition());
    }
 
-   if (document.querySelector('.slider-version__desktop-style-link')) {
-      /* нижний отступ у кнопки в слайдере desktop + планшет */
+   if (document.querySelector('.slider-version')) {
       const SLIDERS_VERSION = document.querySelectorAll('.slider-version');
       SLIDERS_VERSION.forEach((element) => {
+         if (element.querySelector('.slider-card__item-image')) { addMarginButtonSwiper(element) };
+         if (element.querySelector('.slider-version__desktop-style-buttons')) { movingButtons(element) };
+      })
+      /* нижний отступ у кнопки в слайдере desktop + планшет */
+      function addMarginButtonSwiper(element) {
          const SIZE_SWIPER = element.querySelector('.swiper-slide').clientHeight;
          const SIZE_SLIDER = element.querySelector('.slider-card__item-image').clientHeight;
-         element.style.setProperty('--padding-button', `${SIZE_SWIPER - SIZE_SLIDER}px`);
-         movingButtons(element);
-      })
+         if (document.querySelector('.slider-version__desktop-style-link')) {
+            element.style.setProperty('--padding-button', `${SIZE_SWIPER - SIZE_SLIDER}px`);
+         }
+      }
       /* эффект следование стрелок слайдера за курсором */
       function movingButtons(element) {
          element.addEventListener('mousemove', (event) => {

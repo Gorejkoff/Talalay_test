@@ -5807,8 +5807,8 @@ a:hover .hover-line-change::before {
 }
 
 .checkout__title {
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   color: var(--color-black-olive);
   text-align: center;
   font-size: 24px;

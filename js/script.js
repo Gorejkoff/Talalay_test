@@ -421,6 +421,16 @@ window.addEventListener('load', function (event) {
       if (event.target.closest('.video__element') && mediaQuery_1024.matches) {
          event.target.closest('.video__element').muted = false;
       }
+      if (event.target.closest('.forms__password-visible')) {
+         event.target.closest('.forms__shell').querySelector('.forms__password').type = 'text';
+         event.target.closest('.forms__shell').querySelector('.forms__password-hidden').classList.remove('hidden');
+         event.target.closest('.forms__shell').querySelector('.forms__password-visible').classList.add('hidden');
+      }
+      if (event.target.closest('.forms__password-hidden')) {
+         event.target.closest('.forms__shell').querySelector('.forms__password').type = 'password';
+         event.target.closest('.forms__shell').querySelector('.forms__password-visible').classList.remove('hidden');
+         event.target.closest('.forms__shell').querySelector('.forms__password-hidden').classList.add('hidden');
+      }
    })
 
    if (document.querySelector('.capsules-template__product-availability')) {
@@ -527,7 +537,7 @@ window.addEventListener('load', function (event) {
    }
 
 
-   /* управление табами фильтра */
+   /* управление табами */
    class TabsOpen {
       constructor(tabs, addFunction) {
          this.tabs = document.querySelector(`[${tabs}]`);
@@ -536,7 +546,7 @@ window.addEventListener('load', function (event) {
       }
       init = () => {
          document.body.addEventListener('click', this.examination);
-         window.addEventListener('resize', this.externalFunction);
+         this.addFunction && window.addEventListener('resize', this.externalFunction);
       };
       examination = (event) => {
          if (event.target.closest('[tabs_button]') && !event.target.closest('[tabs]').classList.contains('active')) {
@@ -563,9 +573,15 @@ window.addEventListener('load', function (event) {
    FILTER_SORTING && !mediaQuery_767.matches && removeTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
 
    /* инициализация табов фильтра */
-   if (this.document.querySelector('[tabs_filter]')) {
+   if (document.querySelector('[tabs_filter]')) {
       const FILTER_TABS = new TabsOpen('tabs_filter', changeList).init();
    }
+   /* корзина, показать выбранные товары в мобильном */
+   if (document.querySelector('[checkout_tab]')) {
+      const CHECKOUT = new TabsOpen('checkout_tab').init();
+   }
+
+
    /* изменение состояния filter__catalog */
    function changeList() {
       mediaQuery_767.matches && setTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
@@ -584,7 +600,6 @@ window.addEventListener('load', function (event) {
       tabs_content.removeAttribute('tabs_content');
       tabs_inner.removeAttribute('tabs_content-inner');
    }
-
 
    /* перемещение filter__catalog */
    function moveUpCatalog() { LIST_LEFT.prepend(FILTER_CATALOG) };
@@ -612,6 +627,78 @@ window.addEventListener('load', function (event) {
       })
    }
 
+   /* счётчик */
+   if (document.querySelectorAll('.counter').length > 0) {
+      document.querySelectorAll('.counter').forEach((e) => {
+         let namber = e.dataset.counter;
+         decrement(namber, e);
+      })
+      function decrement(namber, e) {
+         setTimeout(() => {
+            namber--;
+            e.innerHTML = namber;
+            namber > 0 && decrement(namber, e);
+         }, 1000)
+      }
+   }
+
+   /* календарь */
+   if (this.document.querySelector('#calendar')) {
+      const calendarDate = this.document.querySelector('#calendar_date');
+      const calendar = new VanillaCalendar('#calendar', {
+         settings: {
+            lang: 'ru',
+            range: {
+               disablePast: true,
+            },
+            visibility: {
+               theme: 'light',
+            },
+         },
+         input: true,
+         actions: {
+            clickDay(e, dates) {
+               let [year, month, dey] = dates[0].split('-');
+               setDate(dey, month, year)
+            },
+         },
+      });
+      calendar.init();
+      /* отображение даты */
+      let newDate = new Date;
+      //  setDate(newDate.getDate(), newDate.getMonth(), newDate.getFullYear());
+      function setDate(day, month, year) {
+         calendarDate.innerHTML = day + '.' + month + '.' + year;
+      }
+      // calendar.selectedDates; - массив выбранной даты
+   }
+
+
 })
+
+
+
+// Socials Widget
+/* -- START -- */
+const socialsWidget = document.querySelector('#socials-widget');
+const socialsWidgetOpenButton = document.querySelector('.socials__button_open');
+const socialsWidgetCloseButton = document.querySelector('.socials__button_close');
+
+const openSocialsWidget = () => {
+   socialsWidget.classList.remove('socials_hidden');
+};
+
+const closeSocialsWidget = () => {
+   socialsWidget.classList.add('socials_hidden');
+};
+
+if (socialsWidget) {
+   socialsWidgetOpenButton.addEventListener('click', openSocialsWidget);
+   socialsWidgetCloseButton.addEventListener('click', closeSocialsWidget);
+}
+/* -- END -- */
+
+
+
 
 

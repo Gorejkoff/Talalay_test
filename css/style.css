@@ -5489,6 +5489,25 @@ a:hover .hover-line-change::before {
   font-size: 18px;
 }
 
+.forms__shell .forms__time {
+  font-size: 18px;
+}
+
+.forms__shell .filter__content {
+  top: calc(100% + 5px);
+  left: 0;
+}
+
+.forms__time svg {
+  -webkit-transition: transform 0.22s;
+  -o-transition: transform 0.22s;
+  transition: transform 0.22s;
+}
+
+.forms__shell.active .forms__time svg {
+  transform: rotate3d(1, 0, 0, 180deg);
+}
+
 .forms__password,
 .forms__fone {
   width: 100%;
@@ -5539,6 +5558,19 @@ a:hover .hover-line-change::before {
 
 .forms__bottom-button {
   text-align: center;
+}
+
+.forms__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 @media (min-width:768px) {
@@ -6139,7 +6171,8 @@ a:hover .hover-line-change::before {
 }
 
 .vanilla-calendar {
-  border: 1px solid var(--color-creamy);
+  border-radius: 0;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
 }
 
 #calendar_date {

@@ -465,8 +465,44 @@
                         </div>
                         <div class="forms__block">
                            <div class="forms__name">Выберите время доставки</div>
-                           <div class="forms__shell">
-                              <input class="forms__text" class="forms__input" type="text" placeholder="">
+                           <div class="forms__shell" tabs>
+                              <button class="forms__time" type="button" tabs_button>
+                                 <span show_data>8:00 - 12:00</span>
+                                 <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8F8F8F" stroke-width="1.5" />
+                                 </svg>
+                              </button>
+                              <div class="filter__content" tabs_content>
+                                 <ul class="filter__content-list" tabs_content-inner>
+                                    <li>
+                                       <label class="filter__item">
+                                          <span get_data>8:00 - 12:00</span>
+                                          <input type="radio" name="time" value="1" checked>
+                                          <span class="filter__list-check">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                          </span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label class="filter__item">
+                                          <span get_data> 12:00 - 16:00</span>
+                                          <input type="radio" name="time" value="1">
+                                          <span class="filter__list-check">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                          </span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label class="filter__item">
+                                          <span get_data>16:00 - 20:00</span>
+                                          <input type="radio" name="time" value="1">
+                                          <span class="filter__list-check">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                          </span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
                            </div>
                         </div>
                      </div>

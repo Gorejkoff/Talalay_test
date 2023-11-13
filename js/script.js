@@ -539,14 +539,15 @@ window.addEventListener('load', function (event) {
 
    /* управление табами */
    class TabsOpen {
-      constructor(tabs, addFunction) {
-         this.tabs = document.querySelector(`[${tabs}]`);
+      constructor(tabs, addFunctionResize, addFunctionAction) {
+         this.tabs = document.querySelector(`${tabs}`);
          this.tabsList = this.tabs.querySelectorAll('[tabs]');
-         this.addFunction = addFunction;
+         this.addFunctionResize = addFunctionResize;
+         this.addFunctionAction = addFunctionAction;
       }
       init = () => {
          document.body.addEventListener('click', this.examination);
-         this.addFunction && window.addEventListener('resize', this.externalFunction);
+         this.addFunctionResize && window.addEventListener('resize', this.externalFunction);
       };
       examination = (event) => {
          if (event.target.closest('[tabs_button]') && !event.target.closest('[tabs]').classList.contains('active')) {
@@ -555,6 +556,11 @@ window.addEventListener('load', function (event) {
             })
          } else if (!event.target.closest('[tabs_content]')) {
             this.tabsList.forEach(element => this.close(element));
+         }
+         if (event.target.closest('[tabs_content-inner]') &&
+            this.addFunctionAction &&
+            event.target.closest('[tabs_content-inner]').querySelector('[get_data]')) {
+            this.addFunctionAction(event)
          }
       }
       open = (element) => {
@@ -566,7 +572,7 @@ window.addEventListener('load', function (event) {
          element.classList.remove('active');
       };
       getSize = (element) => { return element.querySelector('[tabs_content-inner]').clientHeight };
-      externalFunction = () => { this.addFunction() };
+      externalFunction = () => { this.addFunctionResize() };
    }
    /* проверка, изменение состояния filter__catalog */
    FILTER_SORTING && mediaQuery_767.matches && setTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
@@ -574,13 +580,12 @@ window.addEventListener('load', function (event) {
 
    /* инициализация табов фильтра */
    if (document.querySelector('[tabs_filter]')) {
-      const FILTER_TABS = new TabsOpen('tabs_filter', changeList).init();
+      const FILTER_TABS = new TabsOpen('[tabs_filter]', changeList).init();
    }
    /* корзина, показать выбранные товары в мобильном */
-   if (document.querySelector('[checkout_tab]')) {
-      const CHECKOUT = new TabsOpen('checkout_tab').init();
+   if (!document.querySelector('[tabs_filter]') && document.querySelector('[tabs]')) {
+      const TABS = new TabsOpen('main', false, changeData).init();
    }
-
 
    /* изменение состояния filter__catalog */
    function changeList() {
@@ -600,14 +605,21 @@ window.addEventListener('load', function (event) {
       tabs_content.removeAttribute('tabs_content');
       tabs_inner.removeAttribute('tabs_content-inner');
    }
+   /* запись выбранного заначения поле выбора */
+   function changeData(event) {
+      if (event.target.closest('.filter__item')) {
+         event.target.closest('[tabs]').querySelector('[show_data]').innerHTML
+            = event.target.closest('.filter__item').querySelector('[get_data]').innerHTML;
+      }
+   }
 
    /* перемещение filter__catalog */
    function moveUpCatalog() { LIST_LEFT.prepend(FILTER_CATALOG) };
    function moveBackCatalog() { FILTER_BLOCK.prepend(FILTER_CATALOG) };
 
    /* смена картинок в каталоге при наведении на зоны карточки */
-   if (document.querySelector('[change-image]')) {
-      document.querySelector('[change-image]').addEventListener('mouseover', (event) => {
+   if (document.querySelector('[change_img]')) {
+      document.body.addEventListener('mouseover', (event) => {
          if (event.target.closest('.change-img')) {
             let namber = event.target.closest('.change-img').dataset.namber;
             let listImg = event.target.closest('[change_img]').querySelectorAll('img');

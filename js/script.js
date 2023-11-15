@@ -620,15 +620,29 @@ window.addEventListener('load', function (event) {
    /* смена картинок в каталоге при наведении на зоны карточки */
    if (document.querySelector('[change_img]')) {
       document.body.addEventListener('mouseover', (event) => {
-         if (event.target.closest('.change-img')) {
+         if (event.target.closest('[change_img]')) { changeImg(event) }
+      })
+      document.body.addEventListener('mouseout', (event) => {
+         if (event.target.closest('[change_img]') &&
+            event.target.closest('[change_img]') !==
+            event.relatedTarget.closest('[change_img]')) { returnImg(event) }
+      })
+      function changeImg(event) {
+         if (!event.target.closest('.slider-card__favorites') &&
+            !event.target.closest('.button-capsules-more')) {
             let namber = event.target.closest('.change-img').dataset.namber;
             let listImg = event.target.closest('[change_img]').querySelectorAll('img');
             listImg.forEach((e) => {
                e.classList.toggle('hidden', e.dataset.namber !== namber)
             })
          }
-      })
+      }
+      function returnImg(event) {
+         let listImg = event.target.closest('[change_img]').querySelectorAll('img');
+         listImg.forEach((e) => { e.classList.toggle('hidden', e.dataset.namber !== '1') })
+      }
    }
+
 
    /* запуск видео */
    if (this.document.querySelector('.video')) {
@@ -682,7 +696,7 @@ window.addEventListener('load', function (event) {
       function setDate(day, month, year) {
          calendarDate.innerHTML = day + '.' + month + '.' + year;
       }
-      // calendar.selectedDates; - массив выбранной даты
+      // calendar.selectedDates; - массив выбранной даты 
    }
 
 

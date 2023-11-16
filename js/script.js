@@ -244,6 +244,7 @@ window.addEventListener('load', function (event) {
             enabled: true,
             onlyInViewport: false,
          },
+         loop: true,
          speed: 300,
          slidesPerView: 4,
          spaceBetween: 15,
@@ -646,9 +647,15 @@ window.addEventListener('load', function (event) {
 
    /* запуск видео */
    if (this.document.querySelector('.video')) {
-      document.body.addEventListener('touchstart', (event) => {
-         if (event.target.closest('.video__element') && !mediaQuery_1024.matches) {
-            event.target.closest('.video__element').play();
+      document.body.addEventListener('click', (event) => {
+         if (event.target.closest('.video__button')) {
+            let video = event.target.closest('.video__item').querySelector('video');
+            video.setAttribute('controls', '');
+            video.currentTime = 0;
+            video.muted = false;
+            video.load();
+            video.play();
+            event.target.closest('.video__button').remove();
          }
       })
    }

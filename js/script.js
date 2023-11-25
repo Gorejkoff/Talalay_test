@@ -631,16 +631,16 @@ window.addEventListener('load', function (event) {
       function changeImg(event) {
          if (!event.target.closest('.slider-card__favorites') &&
             !event.target.closest('.button-capsules-more')) {
-            let namber = event.target.closest('.change-img').dataset.namber;
+            let number = event.target.closest('.change-img').dataset.slide;
             let listImg = event.target.closest('[change_img]').querySelectorAll('img');
             listImg.forEach((e) => {
-               e.classList.toggle('hidden', e.dataset.namber !== namber)
+               e.classList.toggle('hidden', e.dataset.slide !== number)
             })
          }
       }
       function returnImg(event) {
          let listImg = event.target.closest('[change_img]').querySelectorAll('img');
-         listImg.forEach((e) => { e.classList.toggle('hidden', e.dataset.namber !== '1') })
+         listImg.forEach((e) => { e.classList.toggle('hidden', e.dataset.slide !== '1') })
       }
    }
 
@@ -663,14 +663,14 @@ window.addEventListener('load', function (event) {
    /* счётчик */
    if (document.querySelectorAll('.counter').length > 0) {
       document.querySelectorAll('.counter').forEach((e) => {
-         let namber = e.dataset.counter;
-         decrement(namber, e);
+         let number = e.dataset.counter;
+         decrement(number, e);
       })
-      function decrement(namber, e) {
+      function decrement(number, e) {
          setTimeout(() => {
-            namber--;
-            e.innerHTML = namber;
-            namber > 0 && decrement(namber, e);
+            number--;
+            e.innerHTML = number;
+            number > 0 && decrement(number, e);
          }, 1000)
       }
    }

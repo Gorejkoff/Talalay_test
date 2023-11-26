@@ -2,12 +2,13 @@
 <html lang="ru">
 
 <head>
-   <title>Reset Password</title>
+   <title>Orders</title>
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="viewport" content="width=device-width">
 
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
+   <link rel="stylesheet" href="./css/intlTelInput.css">
    <link rel="stylesheet" href="./css/swiper-style.css">
    <link rel="stylesheet" href="./css/style.css?_V=2">
 </head>
@@ -326,64 +327,402 @@
       <main class="main">
 
 
-         <section class="forms block-margin-bottom">
-            <div class="forms__container">
-               <h2 class="forms__title">Восстановление<br> пароля</h2>
-               <form class="forms__body" action="#" method="post" name="reset_password" id="reset_password">
-                  <div class="forms__block">
-                     <div class="forms__name">Придумайте новый пароль</div>
-                     <div class="forms__shell">
-                        <input class="forms__password" class="forms__input" type="password">
-                        <button class="forms__password-hidden hidden" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15L23.4543 15Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49999 22.4641L7.49999 19L8.79903 19.75L6.79903 23.2141L5.49999 22.4641Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M23 19L25 22.4641L23.701 23.2141L21.701 19.75L23 19Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3867 24.8921L12.0809 20.9528L13.5582 21.2131L12.8639 25.1524L11.3867 24.8921Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 21L18.6939 24.9394L17.2166 25.1996L16.5227 21.2602L18 21Z" fill="#757575" />
-                           </svg>
+         <section class="title">
+            <div class="title__container">
+               <div class="title__body">
+                  <h1 class="title__text">
+                     Мои заказы
+                  </h1>
+               </div>
+            </div>
+         </section>
+
+
+
+         <section class="orders block-margin-bottom">
+            <div class="orders__container">
+               <div class="orders__body">
+                  <div class="orders__links">
+                     <ul>
+                        <li class="profile__link active"><a href="profile.html">Профиль</a></li>
+                        <li class="profile__link"><a href="orders.html">Мои заказы</a></li>
+                        <li class="profile__link"><a href="bonus_program.html">Бонусная программа</a></li>
+                        <li class="profile__link"><a href="mailings.html">Управление рассылками</a></li>
+                        <li class="profile__link"><a href="#0">Выход</a></li>
+                     </ul>
+                  </div>
+                  <div class="orders__block">
+                     <div class="orders__item" tabs>
+                        <button class="orders__button" type="button" tabs_button>
+                           <span class="orders__button-shell">
+                              <span class="orders__number">№ 402042</span>
+                              <span class="orders__status"><span class="orders__marker completed"></span><span>Выполнен</span></span>
+                              <span class="orders__date">24 сентября <wbr>2021 г.</span>
+                           </span>
+                           <img class="orders__button-cross" src="./img/svg/cross.svg" alt="крестик">
                         </button>
-                        <button class="forms__password-visible" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 16.5C15.8284 16.5 16.5 15.8284 16.5 15C16.5 14.1716 15.8284 13.5 15 13.5C14.1716 13.5 13.5 14.1716 13.5 15C13.5 15.8284 14.1716 16.5 15 16.5ZM15 18C16.6568 18 18 16.6569 18 15C18 13.3431 16.6568 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z" fill="#757575" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15H23.4543Z" fill="#757575" />
-                              <path d="M6.50732 15C6.6574 13.6823 7.44194 12.4082 8.80713 11.3889C10.3332 10.2494 12.511 9.5 14.9808 9.5C17.4506 9.5 19.6283 10.2494 21.1544 11.3889C22.5196 12.4082 23.3042 13.6823 23.4543 15H24.9616C24.639 11.0937 20.2937 8 14.9808 8C9.66782 8 5.32262 11.0937 5 15L6.50732 15Z" fill="#757575" />
-                           </svg>
-                        </button>
+                        <div tabs_content>
+                           <div tabs_content-inner>
+                              <ul class="orders__list">
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-17.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div>12 980 ₽</div>
+                                       <div class="orders__price-sale">15 000 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-18.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-19.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+                              <div class="orders__total">
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Стоимость:</div>
+                                    <div class="orders__total-quantity">40 000 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Доставка:</div>
+                                    <div class="orders__total-quantity">500 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name-result">Сумма заказа:</div>
+                                    <div class="orders__total-quantity-result">40 500 ₽</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
-                     <div class="forms__hint">Пароль неверный</div>
-                  </div>
-                  <div class="forms__block">
-                     <div class="forms__name">Повторите пароль</div>
-                     <div class="forms__shell">
-                        <input class="forms__password" class="forms__input" type="password">
-                        <button class="forms__password-hidden hidden" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15L23.4543 15Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49999 22.4641L7.49999 19L8.79903 19.75L6.79903 23.2141L5.49999 22.4641Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M23 19L25 22.4641L23.701 23.2141L21.701 19.75L23 19Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3867 24.8921L12.0809 20.9528L13.5582 21.2131L12.8639 25.1524L11.3867 24.8921Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 21L18.6939 24.9394L17.2166 25.1996L16.5227 21.2602L18 21Z" fill="#757575" />
-                           </svg>
+                     <div class="orders__item" tabs>
+                        <button class="orders__button" type="button" tabs_button>
+                           <span class="orders__button-shell">
+                              <span class="orders__number">№ 402042</span>
+                              <span class="orders__status"><span class="orders__marker progress"></span><span>В работе</span></span>
+                              <span class="orders__date">24 сентября <wbr>2021 г.</span>
+                           </span>
+                           <img class="orders__button-cross" src="./img/svg/cross.svg" alt="крестик">
                         </button>
-                        <button class="forms__password-visible" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 16.5C15.8284 16.5 16.5 15.8284 16.5 15C16.5 14.1716 15.8284 13.5 15 13.5C14.1716 13.5 13.5 14.1716 13.5 15C13.5 15.8284 14.1716 16.5 15 16.5ZM15 18C16.6568 18 18 16.6569 18 15C18 13.3431 16.6568 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z" fill="#757575" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15H23.4543Z" fill="#757575" />
-                              <path d="M6.50732 15C6.6574 13.6823 7.44194 12.4082 8.80713 11.3889C10.3332 10.2494 12.511 9.5 14.9808 9.5C17.4506 9.5 19.6283 10.2494 21.1544 11.3889C22.5196 12.4082 23.3042 13.6823 23.4543 15H24.9616C24.639 11.0937 20.2937 8 14.9808 8C9.66782 8 5.32262 11.0937 5 15L6.50732 15Z" fill="#757575" />
-                           </svg>
-                        </button>
+                        <div tabs_content>
+                           <div tabs_content-inner>
+                              <ul class="orders__list">
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-17.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div>12 980 ₽</div>
+                                       <div class="orders__price-sale">15 000 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-18.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-19.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+                              <div class="orders__total">
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Стоимость:</div>
+                                    <div class="orders__total-quantity">40 000 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Доставка:</div>
+                                    <div class="orders__total-quantity">500 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name-result">Сумма заказа:</div>
+                                    <div class="orders__total-quantity-result">40 500 ₽</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
-                     <div class="forms__hint">Пароль неверный</div>
+                     <div class="orders__item" tabs>
+                        <button class="orders__button" type="button" tabs_button>
+                           <span class="orders__button-shell">
+                              <span class="orders__number">№ 402042</span>
+                              <span class="orders__status"><span class="orders__marker awaiting"></span><span>Ожидает оплаты</span></span>
+                              <span class="orders__date">24 сентября <wbr>2021 г.</span>
+                           </span>
+                           <img class="orders__button-cross" src="./img/svg/cross.svg" alt="крестик">
+                        </button>
+                        <div tabs_content>
+                           <div tabs_content-inner>
+                              <ul class="orders__list">
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-17.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div>12 980 ₽</div>
+                                       <div class="orders__price-sale">15 000 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-18.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-19.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+                              <div class="orders__total">
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Стоимость:</div>
+                                    <div class="orders__total-quantity">40 000 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Доставка:</div>
+                                    <div class="orders__total-quantity">500 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name-result">Сумма заказа:</div>
+                                    <div class="orders__total-quantity-result">40 500 ₽</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="orders__item" tabs>
+                        <button class="orders__button" type="button" tabs_button>
+                           <span class="orders__button-shell">
+                              <span class="orders__number">№ 402042</span>
+                              <span class="orders__status"><span class="orders__marker canceled"></span><span>Отменён</span></span>
+                              <span class="orders__date">24 сентября <wbr>2021 г.</span>
+                           </span>
+                           <img class="orders__button-cross" src="./img/svg/cross.svg" alt="крестик">
+                        </button>
+                        <div tabs_content>
+                           <div tabs_content-inner>
+                              <ul class="orders__list">
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-17.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div>12 980 ₽</div>
+                                       <div class="orders__price-sale">15 000 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-18.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="orders__image">
+                                       <img src="./img/webp/img-19.webp" alt="">
+                                    </div>
+                                    <div class="orders__name">Куртка-рубашка стёганая</div>
+                                    <div class="orders__price">
+                                       <div class="orders__price-number">12 980 ₽</div>
+                                       <div class="orders__price-color black"></div>
+                                    </div>
+                                    <div class="orders__shell">
+                                       <div class="orders__size">
+                                          <div>Размер:</div>
+                                          <div>48</div>
+                                       </div>
+                                       <div class="orders__quantity">
+                                          <div>Количество:</div>
+                                          <div>1</div>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+                              <div class="orders__total">
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Стоимость:</div>
+                                    <div class="orders__total-quantity">40 000 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name">Доставка:</div>
+                                    <div class="orders__total-quantity">500 ₽</div>
+                                 </div>
+                                 <div class="orders__total-data">
+                                    <div class="orders__total-name-result">Сумма заказа:</div>
+                                    <div class="orders__total-quantity-result">40 500 ₽</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                  <div class="forms__buttons">
-                     <button class="black-button" type="submit">Восстановить</button>
-                  </div>
-               </form>
+
+
+
+
+
+               </div>
             </div>
          </section>
 
@@ -537,9 +876,11 @@
 
       </footer>
 
+
    </div>
 
 
+   <script defer src="js/intlTelInput.js"></script>
    <script defer src="js/swiper-bundle.min.js"></script>
    <script defer src="js/script.js"></script>
 </body>

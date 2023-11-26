@@ -2,12 +2,13 @@
 <html lang="ru">
 
 <head>
-   <title>Reset Password</title>
+   <title>Profile</title>
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="viewport" content="width=device-width">
 
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
+   <link rel="stylesheet" href="./css/intlTelInput.css">
    <link rel="stylesheet" href="./css/swiper-style.css">
    <link rel="stylesheet" href="./css/style.css?_V=2">
 </head>
@@ -326,63 +327,268 @@
       <main class="main">
 
 
-         <section class="forms block-margin-bottom">
-            <div class="forms__container">
-               <h2 class="forms__title">Восстановление<br> пароля</h2>
-               <form class="forms__body" action="#" method="post" name="reset_password" id="reset_password">
-                  <div class="forms__block">
-                     <div class="forms__name">Придумайте новый пароль</div>
-                     <div class="forms__shell">
-                        <input class="forms__password" class="forms__input" type="password">
-                        <button class="forms__password-hidden hidden" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15L23.4543 15Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49999 22.4641L7.49999 19L8.79903 19.75L6.79903 23.2141L5.49999 22.4641Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M23 19L25 22.4641L23.701 23.2141L21.701 19.75L23 19Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3867 24.8921L12.0809 20.9528L13.5582 21.2131L12.8639 25.1524L11.3867 24.8921Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 21L18.6939 24.9394L17.2166 25.1996L16.5227 21.2602L18 21Z" fill="#757575" />
-                           </svg>
-                        </button>
-                        <button class="forms__password-visible" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 16.5C15.8284 16.5 16.5 15.8284 16.5 15C16.5 14.1716 15.8284 13.5 15 13.5C14.1716 13.5 13.5 14.1716 13.5 15C13.5 15.8284 14.1716 16.5 15 16.5ZM15 18C16.6568 18 18 16.6569 18 15C18 13.3431 16.6568 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z" fill="#757575" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15H23.4543Z" fill="#757575" />
-                              <path d="M6.50732 15C6.6574 13.6823 7.44194 12.4082 8.80713 11.3889C10.3332 10.2494 12.511 9.5 14.9808 9.5C17.4506 9.5 19.6283 10.2494 21.1544 11.3889C22.5196 12.4082 23.3042 13.6823 23.4543 15H24.9616C24.639 11.0937 20.2937 8 14.9808 8C9.66782 8 5.32262 11.0937 5 15L6.50732 15Z" fill="#757575" />
+         <section class="title">
+            <div class="title__container">
+               <div class="title__body">
+                  <h1 class="title__text">
+                     профиль
+                  </h1>
+               </div>
+            </div>
+         </section>
+
+
+
+         <section class="profile block-margin-bottom">
+            <div class="profile__container">
+               <div class="profile__body">
+                  <div class="profile__links">
+                     <ul>
+                        <li class="profile__link active"><a href="profile.html">Профиль</a></li>
+                        <li class="profile__link"><a href="orders.html">Мои заказы</a></li>
+                        <li class="profile__link"><a href="bonus_program.html">Бонусная программа</a></li>
+                        <li class="profile__link"><a href="mailings.html">Управление рассылками</a></li>
+                        <li class="profile__link"><a href="#0">Выход</a></li>
+                     </ul>
+                  </div>
+                  <form class="profile__form" action="#" method="post" name="profile_form" id="profile-form">
+                     <div class="profile__form-block">
+                        <div class="profile__form-item">
+                           <div class="profile__form-name">Имя</div>
+                           <div class="profile__form-input">
+                              <input type="text" placeholder="Иван">
+                           </div>
+                        </div>
+                        <div class="profile__form-item">
+                           <div class="profile__form-name">Фамилия</div>
+                           <div class="profile__form-input">
+                              <input type="text" placeholder="Иванов">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="profile__form-block">
+                        <div class="profile__form-item">
+                           <div class="profile__form-name">Пол</div>
+                           <div class="profile__form-input" tabs>
+                              <div class="profile__form-input">
+                                 <button class="profile__form-size" type="button" tabs_button>
+                                    <sapan show_data>Выберите пол</sapan>
+                                    <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8F8F8F" stroke-width="1.5"></path>
+                                    </svg>
+                                 </button>
+                              </div>
+                              <div class="filter__content" tabs_content>
+                                 <ul class="filter__content-list" tabs_content-inner>
+                                    <li>
+                                       <label class="filter__item">
+                                          <span get_data>Мужской</span>
+                                          <input type="radio" name="sex" value="one">
+                                          <span class="filter__list-check">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                          </span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label class="filter__item">
+                                          <span get_data>Женский</span>
+                                          <input type="radio" name="sex" value="xs">
+                                          <span class="filter__list-check">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                          </span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="profile__form-item">
+                           <div class="profile__form-name">Дата рождения</div>
+                           <div class="profile__form-input">
+                              <input type="text" placeholder="дд.мм.гггг">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="profile__form-block">
+                        <div class="profile__form-item">
+                           <div class="profile__form-name">Телефон</div>
+                           <div class="profile__form-input">
+                              <input class="fone" type="text" name="phone" value="" id="phone" autocomplete="none">
+                           </div>
+                        </div>
+                        <div class="profile__form-item">
+                           <div class="profile__form-name">Email</div>
+                           <div class="profile__form-input">
+                              <input type="text" placeholder="Почта не указана">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="profile__form-item" tabs>
+                        <div class="profile__form-name">Размер одежды</div>
+                        <div class="profile__form-input">
+                           <button class="profile__form-size" type="button" tabs_button>
+                              <sapan show_data>Выберите размер</sapan>
+                              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8F8F8F" stroke-width="1.5"></path>
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="filter__content" tabs_content>
+                           <ul class="filter__content-list" tabs_content-inner>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>One Size</span>
+                                    <input type="radio" name="size" value="one">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>XS</span>
+                                    <input type="radio" name="size" value="xs">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>S</span>
+                                    <input type="radio" name="size" value="s">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>M</span>
+                                    <input type="radio" name="size" value="m">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>L</span>
+                                    <input type="radio" name="size" value="l">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>XL</span>
+                                    <input type="radio" name="size" value="xl">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label class="filter__item">
+                                    <span get_data>XXL</span>
+                                    <input type="radio" name="size" value="xxl">
+                                    <span class="filter__list-check">
+                                       <img class="hidden" src="./img/svg/check.svg" alt="">
+                                    </span>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="profile__buttons">
+                        <button class="black-button" type="submit">Сохранить изменения</button>
+                        <a class="hover-change-color" href="#0">Сменить пароль</a>
+                     </div>
+                  </form>
+                  <div class="profile__info-body">
+                     <div class="profile__info-block">
+                        <div class="profile__info-name">Ваши <wbr>бонусы</div>
+                        <div class="profile__info-quantity">
+                           <span>1 балл = <wbr>1 ₽</span>
+                        </div>
+                     </div>
+                     <div class="profile__info-bottom">
+                        <div class="profile__info-price">
+                           15 000 б
+                        </div>
+                        <a class="profile__download black-button" href="checkout.html">Скачать карту лояльности</a>
+                        <button class="profile__rules" type="button">
+                           Правила бонусной программы
+                           <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
                            </svg>
                         </button>
                      </div>
-                     <div class="forms__hint">Пароль неверный</div>
                   </div>
-                  <div class="forms__block">
-                     <div class="forms__name">Повторите пароль</div>
-                     <div class="forms__shell">
-                        <input class="forms__password" class="forms__input" type="password">
-                        <button class="forms__password-hidden hidden" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15L23.4543 15Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49999 22.4641L7.49999 19L8.79903 19.75L6.79903 23.2141L5.49999 22.4641Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M23 19L25 22.4641L23.701 23.2141L21.701 19.75L23 19Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3867 24.8921L12.0809 20.9528L13.5582 21.2131L12.8639 25.1524L11.3867 24.8921Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 21L18.6939 24.9394L17.2166 25.1996L16.5227 21.2602L18 21Z" fill="#757575" />
-                           </svg>
+               </div>
+            </div>
+         </section>
+
+
+         <section class="address block-margin-bottom">
+            <div class="address__container">
+               <form class="address__body" action="#0" method="post" name="address_body" id="address-body">
+                  <div class="address__block">
+                     <div class="address__title">Адрес доставки</div>
+                     <button type="button" class="address__add black-button">Добавить адрес +</button>
+                  </div>
+                  <div class="address__item">
+                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
+                     <label class="address__item-buttons">
+                        <input type="radio" name="address" value="1" checked>
+                        <span class="address__basic transparent-button">Основной адрес</span>
+                        <button class="address__item-delete" type="button">
+                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
                         </button>
-                        <button class="forms__password-visible" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 16.5C15.8284 16.5 16.5 15.8284 16.5 15C16.5 14.1716 15.8284 13.5 15 13.5C14.1716 13.5 13.5 14.1716 13.5 15C13.5 15.8284 14.1716 16.5 15 16.5ZM15 18C16.6568 18 18 16.6569 18 15C18 13.3431 16.6568 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z" fill="#757575" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15H23.4543Z" fill="#757575" />
-                              <path d="M6.50732 15C6.6574 13.6823 7.44194 12.4082 8.80713 11.3889C10.3332 10.2494 12.511 9.5 14.9808 9.5C17.4506 9.5 19.6283 10.2494 21.1544 11.3889C22.5196 12.4082 23.3042 13.6823 23.4543 15H24.9616C24.639 11.0937 20.2937 8 14.9808 8C9.66782 8 5.32262 11.0937 5 15L6.50732 15Z" fill="#757575" />
-                           </svg>
+                     </label>
+                  </div>
+                  <div class="address__item">
+                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
+                     <label class="address__item-buttons">
+                        <input type="radio" name="address" value="2">
+                        <span class="address__basic transparent-button">Основной адрес</span>
+                        <button class=" address__item-delete" type="button">
+                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
                         </button>
-                     </div>
-                     <div class="forms__hint">Пароль неверный</div>
+                     </label>
                   </div>
-                  <div class="forms__buttons">
-                     <button class="black-button" type="submit">Восстановить</button>
+                  <div class="address__item">
+                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
+                     <label class="address__item-buttons">
+                        <input type="radio" name="address" value="3">
+                        <span class="address__basic transparent-button">Основной адрес</span>
+                        <button class="address__item-delete" type="button">
+                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
+                        </button>
+                     </label>
                   </div>
+                  <div class="address__item">
+                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
+                     <label class="address__item-buttons">
+                        <input type="radio" name="address" value="4">
+                        <span class="address__basic transparent-button">Основной адрес</span>
+                        <button class="address__item-delete" type="button">
+                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
+                        </button>
+                     </label>
+                  </div>
+                  <div class="address__item">
+                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
+                     <label class="address__item-buttons">
+                        <input type="radio" name="address" value="5">
+                        <span class="address__basic transparent-button">Основной адрес</span>
+                        <button class="address__item-delete" type="button">
+                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
+                        </button>
+                     </label>
+                  </div>
+
                </form>
             </div>
          </section>
@@ -537,9 +743,11 @@
 
       </footer>
 
+
    </div>
 
 
+   <script defer src="js/intlTelInput.js"></script>
    <script defer src="js/swiper-bundle.min.js"></script>
    <script defer src="js/script.js"></script>
 </body>

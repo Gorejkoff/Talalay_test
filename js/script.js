@@ -698,8 +698,33 @@ window.addEventListener('load', function (event) {
       });
       calendar.init();
       /* отображение даты */
-      let newDate = new Date;
+      // let newDate = new Date;
       //  setDate(newDate.getDate(), newDate.getMonth(), newDate.getFullYear());
+      function setDate(day, month, year) {
+         calendarDate.innerHTML = day + '.' + month + '.' + year;
+      }
+      // calendar.selectedDates; - массив выбранной даты 
+   }
+
+   if (document.querySelector('#date_birth')) {
+      const calendarDate = document.querySelector('#date_birth');
+      const calendar = new VanillaCalendar('#date_birth', {
+         settings: {
+            lang: 'ru',
+            visibility: {
+               theme: 'light',
+            },
+         },
+         input: true,
+         actions: {
+            clickDay(e, dates) {
+               let [year, month, dey] = dates[0].split('-');
+               setDate(dey, month, year)
+            },
+         },
+      });
+      calendar.init();
+      /* отображение даты */
       function setDate(day, month, year) {
          calendarDate.innerHTML = day + '.' + month + '.' + year;
       }

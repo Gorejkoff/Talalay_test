@@ -9,6 +9,8 @@
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
    <link rel="stylesheet" href="./css/intlTelInput.css">
+   <link rel="stylesheet" href="./css/vanilla-calendar.min.css">
+   <link rel="stylesheet" href="./css/light.min.css">
    <link rel="stylesheet" href="./css/swiper-style.css">
    <link rel="stylesheet" href="./css/style.css?_V=2">
 </head>
@@ -327,7 +329,27 @@
       <main class="main">
 
 
-         <section class="title">
+         <section class="profile__body-mobile">
+            <div class="profile__container" tabs>
+               <button class="profile__button-mobile" type="button" tabs_button>
+                  Профиль
+                  <svg width="10" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
+                  </svg>
+               </button>
+               <div class="profile__links-mobile" tabs_content>
+                  <ul tabs_content-inner>
+                     <li class="profile__link"><a href="orders.html">Мои заказы</a></li>
+                     <li class="profile__link"><a href="bonus_program.html">Бонусная программа</a></li>
+                     <li class="profile__link"><a href="mailings.html">Управление рассылками</a></li>
+                     <li class="profile__link"><a href="#0">Выход</a></li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+
+
+         <section class="title margin">
             <div class="title__container">
                <div class="title__body">
                   <h1 class="title__text">
@@ -338,11 +360,10 @@
          </section>
 
 
-
          <section class="profile block-margin-bottom">
             <div class="profile__container">
                <div class="profile__body">
-                  <div class="profile__links">
+                  <div class="profile__links hidden order-1-min1024">
                      <ul>
                         <li class="profile__link active"><a href="profile.html">Профиль</a></li>
                         <li class="profile__link"><a href="orders.html">Мои заказы</a></li>
@@ -351,7 +372,42 @@
                         <li class="profile__link"><a href="#0">Выход</a></li>
                      </ul>
                   </div>
-                  <form class="profile__form" action="#" method="post" name="profile_form" id="profile-form">
+                  <div class="profile__info-body order-3-min1024">
+                     <div class="profile__info-block">
+                        <div class="profile__info-name">Ваши <wbr>бонусы</div>
+                        <div class="profile__info-quantity">
+                           <span>1 балл = <wbr>1 ₽</span>
+                        </div>
+                     </div>
+                     <div class="profile__info-bottom" tabs>
+                        <div class="profile__info-price">
+                           15 000 б
+                        </div>
+                        <a class="profile__download black-button" href="checkout.html">Скачать карту лояльности</a>
+                        <button class="profile__rules" type="button" tabs_button>
+                           Правила бонусной программы
+                           <svg width="12" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
+                           </svg>
+                        </button>
+                        <div class="profile__rules-text scrollbar" tabs_content>
+                           <ul class="" tabs_content-inner>
+                              <li class="profile__rules-paragraph">Правила использования Бонусной системы</li>
+                              <li class="profile__rules-paragraph">При регистрации в бонусной системе, вам начисляется 2000 баллов, 1 балл = 1 ₽.</li>
+                              <li class="profile__rules-paragraph">При покупке вам начислится 5% от стоимости товара в виде баллов.</li>
+                              <li class="profile__rules-paragraph">Баллы за покупку товаров со скидкой не начисляются и не списываются. Если в одном заказе есть позиции со скидкой и без, для расчета баллов будут учитываться только товары по полной стоимости.</li>
+                              <li class="profile__rules-paragraph">Бонусные баллы не начисляются за покупку подарочных сертификатов и оплату доставки. Нельзя использовать их при оплате банковским переводом.</li>
+                              <li class="profile__rules-paragraph">Правила использования Бонусной системы</li>
+                              <li class="profile__rules-paragraph">При регистрации в бонусной системе, вам начисляется 2000 баллов, 1 балл = 1 ₽.</li>
+                              <li class="profile__rules-paragraph">При покупке вам начислится 5% от стоимости товара в виде баллов.</li>
+                              <li class="profile__rules-paragraph">Баллы за покупку товаров со скидкой не начисляются и не списываются. Если в одном заказе есть позиции со скидкой и без, для расчета баллов будут учитываться только товары по полной стоимости.</li>
+                              <li class="profile__rules-paragraph">Бонусные баллы не начисляются за покупку подарочных сертификатов и оплату доставки. Нельзя использовать их при оплате банковским переводом.</li>
+
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <form class="profile__form order-2-min1024" action="#" method="post" name="profile_form" id="profile-form">
                      <div class="profile__form-block">
                         <div class="profile__form-item">
                            <div class="profile__form-name">Имя</div>
@@ -405,7 +461,7 @@
                         <div class="profile__form-item">
                            <div class="profile__form-name">Дата рождения</div>
                            <div class="profile__form-input">
-                              <input type="text" placeholder="дд.мм.гггг">
+                              <div id="date_birth">дд.мм.гггг</div>
                            </div>
                         </div>
                      </div>
@@ -506,26 +562,6 @@
                         <a class="hover-change-color" href="#0">Сменить пароль</a>
                      </div>
                   </form>
-                  <div class="profile__info-body">
-                     <div class="profile__info-block">
-                        <div class="profile__info-name">Ваши <wbr>бонусы</div>
-                        <div class="profile__info-quantity">
-                           <span>1 балл = <wbr>1 ₽</span>
-                        </div>
-                     </div>
-                     <div class="profile__info-bottom">
-                        <div class="profile__info-price">
-                           15 000 б
-                        </div>
-                        <a class="profile__download black-button" href="checkout.html">Скачать карту лояльности</a>
-                        <button class="profile__rules" type="button">
-                           Правила бонусной программы
-                           <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
                </div>
             </div>
          </section>
@@ -535,8 +571,10 @@
             <div class="address__container">
                <form class="address__body" action="#0" method="post" name="address_body" id="address-body">
                   <div class="address__block">
-                     <div class="address__title">Адрес доставки</div>
-                     <button type="button" class="address__add black-button">Добавить адрес +</button>
+                     <div class="address__title">Адрес <br>доставки</div>
+                     <div class="address__add-button hidden">
+                        <button type="button" class="address__add black-button">Добавить адрес +</button>
+                     </div>
                   </div>
                   <div class="address__item">
                      <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
@@ -587,6 +625,9 @@
                            <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
                         </button>
                      </label>
+                  </div>
+                  <div class="address__add-mobile">
+                     <button type="button" class="address__add black-button">Добавить адрес +</button>
                   </div>
 
                </form>
@@ -748,6 +789,7 @@
 
 
    <script defer src="js/intlTelInput.js"></script>
+   <script src="js/vanilla-calendar.min.js"></script>
    <script defer src="js/swiper-bundle.min.js"></script>
    <script defer src="js/script.js"></script>
 </body>

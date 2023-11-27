@@ -327,7 +327,27 @@
       <main class="main">
 
 
-         <section class="title">
+         <section class="profile__body-mobile">
+            <div class="profile__container" tabs>
+               <button class="profile__button-mobile" type="button" tabs_button>
+                  Мои заказы
+                  <svg width="10" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
+                  </svg>
+               </button>
+               <div class="profile__links-mobile" tabs_content>
+                  <ul tabs_content-inner>
+                     <li class="profile__link"><a href="profile.html">Профиль</a></li>
+                     <li class="profile__link"><a href="bonus_program.html">Бонусная программа</a></li>
+                     <li class="profile__link"><a href="mailings.html">Управление рассылками</a></li>
+                     <li class="profile__link"><a href="#0">Выход</a></li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+
+
+         <section class="title margin">
             <div class="title__container">
                <div class="title__body">
                   <h1 class="title__text">
@@ -339,10 +359,10 @@
 
 
 
-         <section class="orders block-margin-bottom">
+         <section class="orders block-margin-bottom ">
             <div class="orders__container">
                <div class="orders__body">
-                  <div class="orders__links">
+                  <div class="orders__links hidden">
                      <ul>
                         <li class="profile__link"><a href="profile.html">Профиль</a></li>
                         <li class="profile__link active"><a href="orders.html">Мои заказы</a></li>

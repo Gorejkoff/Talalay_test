@@ -255,6 +255,32 @@ window.addEventListener('load', function (event) {
       });
    }
 
+   if (document.querySelector('.interesting__swiper')) {
+      const swiper = new Swiper('.interesting__swiper', {
+         navigation: {
+            nextEl: '.interesting__next',
+            prevEl: '.interesting__prev',
+         },
+         keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+         },
+         speed: 300,
+         slidesPerView: 2,
+         spaceBetween: 10,
+         breakpoints: {
+            768: {
+               spaceBetween: 15,
+               slidesPerView: 2.6,
+            },
+            1024: {
+               spaceBetween: 15,
+               slidesPerView: 4,
+            },
+         }
+      });
+   }
+
    function initSlider(media, slider, sliderBody, sliderItem) {
       const hasSwiper = slider.classList.contains('swiper');
       if (!media && !hasSwiper) {

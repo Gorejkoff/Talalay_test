@@ -2,18 +2,18 @@
 <html lang="ru">
 
 <head>
-   <title>Login</title>
+   <title>News</title>
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="viewport" content="width=device-width">
 
+
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
-   <link rel="stylesheet" href="./css/style.css?_V=2">
-   <link rel="stylesheet" href="./css/intlTelInput.css">
+   <link rel="stylesheet" href="./css/swiper-style.css">
+   <link rel="stylesheet" href="./css/style.css?_V=17">
 </head>
 
 <body>
-
 
    <article id="banner-sale" class="banner-sale">
       <div class="banner-sale__container">
@@ -22,7 +22,7 @@
                <span class="banner-sale__text">Sale ― большие скидки! До 20% на зимнюю коллекцию</span>
             </a>
             <button id="banner-sale-close" class="banner-sale__button" type="button">
-               <img src="./img/svg/close.svg" width="16" height="16" alt="Кнопка закрыть" decoding="async">
+               <img src="./img/svg/close.svg" alt="">
             </button>
          </div>
       </div>
@@ -326,53 +326,141 @@
       <main class="main">
 
 
-         <section class="forms block-margin-bottom">
-            <div class="forms__container">
-               <h2 class="forms__title">Вход</h2>
-               <form class="forms__body" action="#" method="post" name="login" id="login">
-                  <div class="forms__block">
-                     <div class="forms__name">Телефон</div>
-                     <div class="forms__shell">
-                        <input class="forms__fone fone" type="text" name="phone" value="" id="phone" autocomplete="none">
-                     </div>
-                     <div class="forms__hint" id="output">Please enter a valid number below</div>
-                  </div>
-                  <div class="forms__block">
-                     <div class="forms__name">Пароль</div>
-                     <div class="forms__shell">
-                        <input class="forms__password" class="forms__input" type="password">
-                        <button class="forms__password-hidden hidden" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15L23.4543 15Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49999 22.4641L7.49999 19L8.79903 19.75L6.79903 23.2141L5.49999 22.4641Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M23 19L25 22.4641L23.701 23.2141L21.701 19.75L23 19Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3867 24.8921L12.0809 20.9528L13.5582 21.2131L12.8639 25.1524L11.3867 24.8921Z" fill="#757575" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 21L18.6939 24.9394L17.2166 25.1996L16.5227 21.2602L18 21Z" fill="#757575" />
-                           </svg>
-                        </button>
-                        <button class="forms__password-visible" type="button">
-                           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="30" height="30" fill="none" />
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 16.5C15.8284 16.5 16.5 15.8284 16.5 15C16.5 14.1716 15.8284 13.5 15 13.5C14.1716 13.5 13.5 14.1716 13.5 15C13.5 15.8284 14.1716 16.5 15 16.5ZM15 18C16.6568 18 18 16.6569 18 15C18 13.3431 16.6568 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z" fill="#757575" />
-                              <path d="M23.4543 15C23.3042 16.3177 22.5196 17.5918 21.1544 18.6111C19.6284 19.7506 17.4506 20.5 14.9808 20.5C12.511 20.5 10.3332 19.7506 8.80715 18.6111C7.44197 17.5918 6.6574 16.3177 6.50732 15L5 15C5.32262 18.9063 9.66784 22 14.9808 22C20.2937 22 24.6389 18.9063 24.9616 15H23.4543Z" fill="#757575" />
-                              <path d="M6.50732 15C6.6574 13.6823 7.44194 12.4082 8.80713 11.3889C10.3332 10.2494 12.511 9.5 14.9808 9.5C17.4506 9.5 19.6283 10.2494 21.1544 11.3889C22.5196 12.4082 23.3042 13.6823 23.4543 15H24.9616C24.639 11.0937 20.2937 8 14.9808 8C9.66782 8 5.32262 11.0937 5 15L6.50732 15Z" fill="#757575" />
-                           </svg>
-                        </button>
-                     </div>
-                     <div class="forms__error">Пароль неверный</div>
-                  </div>
-                  <div class="forms__buttons">
-                     <button class="black-button" type="submit">Войти</button>
-                     <a class="hover-change-color" href="reset_password.html">Забыли пароль?</a>
-                  </div>
-                  <div class="forms__bottom-button">
-                     <a class="hover-change-color" href="register.html">Создать учетную запись</a>
-                  </div>
-               </form>
+         <section class="breadcrumb">
+            <div class="breadcrumb__container">
+               <div class="breadcrumb__shell">
+                  <ul class="breadcrumb__body">
+                     <li class="breadcrumb__item">
+                        <a href="index.html"><span class="hover-underline">Главная</span></a>
+                     </li>
+                     <li class="breadcrumb__item">
+                        <span class="breadcrumb__dot"></span>
+                     </li>
+                     <li class="breadcrumb__item">
+                        <a href="news.html"><span class="hover-underline">Новости бренда</span></a>
+                     </li>
+                     <li class="breadcrumb__item">
+                        <span class="breadcrumb__dot"></span>
+                     </li>
+                     <li class="breadcrumb__item">
+                        <span>Новая летняя коллекция 2023</span>
+                     </li>
+                  </ul>
+               </div>
             </div>
+         </section>
 
 
+         <section class="title">
+            <div class="title__container">
+               <div class="title__body">
+                  <h1 class="title__text all-width">
+                     Новая летняя <br>коллекция 2023
+                  </h1>
+               </div>
+            </div>
+         </section>
+
+
+         <section class="news-item__image">
+            <img src="./img/webp/img-25.webp" alt="">
+         </section>
+
+
+         <section class="news-item__content block-margin-bottom">
+            <div class="news-item__container">
+               <div class="news-item__content-body">
+                  <div class="news-item__content-block">
+                     <h2 class="news-item__content-title">Зимняя коллекция 20LINE</h2>
+                     <div class="news-item__text-p">Зимняя коллекция 20LINE представлена тремя актуальными капсулами.COZY AUTUMN: комплекты одежды призваны создать классический элегантный образ, но при этом подарить ощущение уюта. Эта атмосфера передается за счёт использования ворсистых тканей — фланель, вельвет; меланжевых переплетений.WINTER SCETCH: это теплая комфортная одежда. В капсуле используются преимущественно натуральные составы материалов, которые в сочетании с актуальными удобными формами обеспечивают максимальный комфорт. Капсула включает деловые и повседневные образы.</div>
+                     <div class="news-item__text-p">Сияющий и роскошный Новый год с коллекцией ELISAFTER MIDNIGHT* — вечерние образы для самых ярких. В капсуле нашли отражение мода 80-х гг. и тренд будущего сезона — металлы, которые были раскрыты с помощью силуэта «перевернутый треугольник» и акцента на плечи, а так же использование тканей с блеском.*«После полуночи»Капсула SPARKLING LAKE — комфорт в сочетании с спортивным стилем, представленный моделями: рубашка красно-черного цвета с принтом клетка в сочетании с комфортными брюками из тафты на трикотажной подкладке, костюм из мягкого трикотажа с принтом клетка, актуальные брюки карго из мягкой ткани с шерстью в сочетании с базовым джемпером молочного цвета.</div>
+                  </div>
+                  <div class="news-item__content-block">
+                     <h2 class="news-item__content-title">ELISAFTER MIDNIGHT*</h2>
+                     <div class="news-item__text-p">Сияющий и роскошный Новый год с коллекцией ELISAFTER MIDNIGHT* — вечерние образы для самых ярких. В капсуле нашли отражение мода 80-х гг. и тренд будущего сезона — металлы, которые были раскрыты с помощью силуэта «перевернутый треугольник» и акцента на плечи, а так же использование тканей с блеском.*«После полуночи»Капсула SPARKLING LAKE — комфорт в сочетании с спортивным стилем, представленный моделями: рубашка красно-черного цвета с принтом клетка в сочетании с комфортными брюками из тафты на трикотажной подкладке, костюм из мягкого трикотажа с принтом клетка, актуальные брюки карго из мягкой ткани с шерстью в сочетании с базовым джемпером молочного цвета.</div>
+                  </div>
+                  <div class="news-item__date">29/06/2023</div>
+               </div>
+            </div>
+         </section>
+
+
+         <section class="interesting">
+            <div class="interesting__container">
+               <div class="interesting__swiper border-top-for-section swiper">
+                  <div class="interesting__title">Вам может <br>быть интересно</div>
+                  <div class="interesting__slider swiper-wrapper">
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-2.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-3.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-2.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-3.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-2.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-3.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-2.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                     <a href="#0" class="interesting__card swiper-slide">
+                        <div class="interesting__card-image">
+                           <img src="./img/webp/poroduction/p_img-3.webp" alt="">
+                        </div>
+                        <div class="interesting__card-name">Собрали для вас весенние образы в новой капсуле</div>
+                        <div class="interesting__card-date">10.05.2023</div>
+                     </a>
+                  </div>
+                  <button class="interesting__prev hidden" type="button">
+                     <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                        <path fill="transparent" stroke="#010101" stroke-width="1.875" d="M20,0.9L20,0.9C9.5,0.9,0.9,9.5,0.9,20l0,0c0,10.5,8.5,19.1,19.1,19.1l0,0c10.5,0,19.1-8.5,19.1-19.1l0,0C39.1,9.5,30.5,0.9,20,0.9z" />
+                        <path fill="transparent" stroke="#010101" stroke-width="3" d="M25,31.7L13.3,20L25,8.3" />
+                     </svg>
+                  </button>
+                  <button class="interesting__next hidden" type="button">
+                     <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="transparent" stroke="#010101" stroke-width="1.875" d="M20,39.1L20,39.1c10.5,0,19.1-8.5,19.1-19.1l0,0C39.1,9.5,30.5,0.9,20,0.9l0,0C9.5,0.9,0.9,9.5,0.9,20l0,0C0.9,30.5,9.5,39.1,20,39.1z" />
+                        <path fill="transparent" stroke="#010101" stroke-width="3" d="M15,8.3L26.7,20L15,31.7" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
          </section>
 
 
@@ -529,11 +617,8 @@
    </div>
 
 
-   <script defer src="js/intlTelInput.js"></script>
-   <script src="js/script.js"></script>
-
-
-
+   <script defer src="js/swiper-bundle.min.js"></script>
+   <script defer src="js/script.js"></script>
 </body>
 
 </html>

@@ -403,7 +403,7 @@ window.addEventListener('load', function (event) {
          event.target.closest('.card-template__tabs-item').classList.toggle('active');
          if (event.target.closest('.card-template__tabs-item').classList.contains('active')) {
             event.target.closest('.card-template__tabs-item').querySelector('.card-template__tabs-text').style.height =
-               event.target.closest('.card-template__tabs-item').querySelector('.card-template__tabs-text-shell').offsetHeight + 'px'
+               event.target.closest('.card-template__tabs-item').querySelector('.card-template__tabs-text-shell').offsetHeight + 1 + 'px'
          } else {
             event.target.closest('.card-template__tabs-item').querySelector('.card-template__tabs-text').style.height = '';
          }
@@ -618,7 +618,7 @@ window.addEventListener('load', function (event) {
    function moveUpCatalog() { LIST_LEFT.prepend(FILTER_CATALOG) };
    function moveBackCatalog() { FILTER_BLOCK.prepend(FILTER_CATALOG) };
 
-   /* смена картинок в каталоге при наведении на зоны карточки */
+   /* смена картинок при наведении на зоны карточки */
    if (document.querySelector('[change_img]')) {
       document.body.addEventListener('mouseover', (event) => {
          if (event.target.closest('[change_img]')) { changeImg(event) }
@@ -730,11 +730,7 @@ window.addEventListener('load', function (event) {
       }
       // calendar.selectedDates; - массив выбранной даты 
    }
-
-
 })
-
-
 
 // Socials Widget
 /* -- START -- */
@@ -756,7 +752,82 @@ if (socialsWidget) {
 }
 /* -- END -- */
 
+class TabsSwitching {
+   constructor(body__buttons, button, tab, execute) {
+      this.name_button = button;
+      this.body__buttons = document.querySelector(body__buttons);
+      this.button = document.querySelectorAll(button);
+      this.tab = document.querySelectorAll(tab);
+      this.execute = execute;
+   }
+   eventClick = () => {
+      this.body__buttons.addEventListener('click', (event) => {
+         if (event.target.closest(this.name_button)) {
+            let n = event.target.closest(this.name_button).dataset.button;
+            this.button.forEach((e) => { e.classList.toggle('active', e.dataset.button == n) });
+            if (this.tab.length > 0) { this.tab.forEach((e) => { e.classList.toggle('active', e.dataset.tab == n) }) }
+            if (this.execute) { this.execute() };
+         }
+      })
+   }
+}
+/* инициалицауия табов поиска адреса доставки */
+if (document.querySelector('.get-address__buttons')) {
+   const TABS_ADD_ADDRESS = new TabsSwitching('.get-address__buttons', '.get-address__button', '.get-address__explanation').eventClick();
+}
 
+/* открывает, закрывает модальные окна. */
+if (document.querySelector('[modal-open]')) {
+   document.addEventListener('click', (event) => {
+      if (event.target.closest('[modal-open]')) { openModal(event) }
+      if (event.target.closest('[modal-close]')) { testModalStopClose(event) }
+   })
+}
+function openModal(event) {
+   let modalElement = event.target.closest('[modal-open]').dataset.modal_open;
+   if (typeof modalElement !== "undefined") {
+      document.querySelector(`#${modalElement}`).classList.add('modal-visible');
+      document.body.classList.add('body-overflow')
+   }
+}
+function testModalStopClose(event) {
+   if (event.target.closest('[modal-stop-close]') &&
+      event.target.closest('[modal-close]') !==
+      event.target.closest('[modal-stop-close]').querySelector('[modal-close]')) {
+      return
+   }
+   closeModal(event);
+}
+function closeModal(event) {
+   event.target.closest('[modal-hidden]').classList.remove('modal-visible');
+   if (!document.querySelector('.modal-visible')) {
+      document.body.classList.remove('body-overflow');
+   }
+}
 
-
-
+/* ===== mailings ===== */
+/* выбор рассылки */
+if (document.forms.mailings_email && document.forms.mailings_sms) {
+   document.forms.mailings_email.addEventListener('change', initEvents);
+   document.forms.mailings_sms.addEventListener('change', initEvents);
+   function initEvents(event) {
+      if (event.target.closest('.mailings__item')) { choiceSomething(event.target) }
+      if (event.target.closest('.mailings__item-off')) { deselectAll(event.target) }
+   }
+   function deselectAll(eventItem) {
+      let nameInput = eventItem.form.querySelector('.mailings__item input').name;
+      eventItem.form[nameInput].forEach((e) => e.checked = false);
+   }
+   function choiceSomething(eventItem) {
+      let nameInput = eventItem.form.querySelector('.mailings__item input').name;
+      let nameInputOff = eventItem.form.querySelector('.mailings__item-off input').name;
+      let hasChecked = nameInput && Array.from(eventItem.form[nameInput]).findIndex((element) => {
+         return element.checked == true;
+      })
+      if (hasChecked !== -1) {
+         eventItem.form[nameInputOff].checked = false;
+      } else {
+         eventItem.form[nameInputOff].checked = true;
+      }
+   }
+}

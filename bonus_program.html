@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-   <title>Profile</title>
+   <title>Bonus Program</title>
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="viewport" content="width=device-width">
 
@@ -332,15 +332,15 @@
          <section class="profile__body-mobile">
             <div class="profile__container" tabs>
                <button class="profile__button-mobile" type="button" tabs_button>
-                  Профиль
+                  Бонусная программа
                   <svg width="10" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
                   </svg>
                </button>
                <div class="profile__links-mobile" tabs_content>
                   <ul tabs_content-inner>
+                     <li class="profile__link"><a href="profile.html">Профиль</a></li>
                      <li class="profile__link"><a href="orders.html">Мои заказы</a></li>
-                     <li class="profile__link"><a href="bonus_program.html">Бонусная программа</a></li>
                      <li class="profile__link"><a href="mailings.html">Управление рассылками</a></li>
                      <li class="profile__link"><a href="#0">Выход</a></li>
                   </ul>
@@ -353,286 +353,101 @@
             <div class="title__container">
                <div class="title__body">
                   <h1 class="title__text">
-                     профиль
+                     Бонусная программа
                   </h1>
                </div>
             </div>
          </section>
 
 
-         <section class="profile block-margin-bottom">
-            <div class="profile__container">
-               <div class="profile__body">
-                  <div class="profile__links hidden order-1-min1024">
+         <section class="bonus block-margin-bottom">
+            <div class="bonus__container">
+               <div class="bonus__body">
+                  <div class="profile__links hidden">
                      <ul>
-                        <li class="profile__link active"><a href="profile.html">Профиль</a></li>
+                        <li class="profile__link"><a href="profile.html">Профиль</a></li>
                         <li class="profile__link"><a href="orders.html">Мои заказы</a></li>
-                        <li class="profile__link"><a href="bonus_program.html">Бонусная программа</a></li>
+                        <li class="profile__link active"><a href="bonus_program.html">Бонусная программа</a></li>
                         <li class="profile__link"><a href="mailings.html">Управление рассылками</a></li>
                         <li class="profile__link"><a href="#0">Выход</a></li>
                      </ul>
                   </div>
-                  <div class="profile__info-body order-3-min1024">
-                     <div class="profile__info-block">
-                        <div class="profile__info-name">Ваши <wbr>бонусы</div>
-                        <div class="profile__info-quantity">
-                           <span>1 балл = <wbr>1 ₽</span>
-                        </div>
-                     </div>
-                     <div class="profile__info-bottom" tabs>
-                        <div class="profile__info-price">
-                           15 000 б
-                        </div>
-                        <a class="profile__download black-button" href="checkout.html">Скачать карту лояльности</a>
-                        <button class="profile__rules" type="button" tabs_button>
-                           Правила бонусной программы
-                           <svg width="12" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#010101" stroke-width="1.5"></path>
-                           </svg>
-                        </button>
-                        <div class="profile__rules-text scrollbar" tabs_content>
-                           <ul class="" tabs_content-inner>
-                              <li class="profile__rules-paragraph">Правила использования Бонусной системы</li>
-                              <li class="profile__rules-paragraph">При регистрации в бонусной системе, вам начисляется 2000 баллов, 1 балл = 1 ₽.</li>
-                              <li class="profile__rules-paragraph">При покупке вам начислится 5% от стоимости товара в виде баллов.</li>
-                              <li class="profile__rules-paragraph">Баллы за покупку товаров со скидкой не начисляются и не списываются. Если в одном заказе есть позиции со скидкой и без, для расчета баллов будут учитываться только товары по полной стоимости.</li>
-                              <li class="profile__rules-paragraph">Бонусные баллы не начисляются за покупку подарочных сертификатов и оплату доставки. Нельзя использовать их при оплате банковским переводом.</li>
-                              <li class="profile__rules-paragraph">Правила использования Бонусной системы</li>
-                              <li class="profile__rules-paragraph">При регистрации в бонусной системе, вам начисляется 2000 баллов, 1 балл = 1 ₽.</li>
-                              <li class="profile__rules-paragraph">При покупке вам начислится 5% от стоимости товара в виде баллов.</li>
-                              <li class="profile__rules-paragraph">Баллы за покупку товаров со скидкой не начисляются и не списываются. Если в одном заказе есть позиции со скидкой и без, для расчета баллов будут учитываться только товары по полной стоимости.</li>
-                              <li class="profile__rules-paragraph">Бонусные баллы не начисляются за покупку подарочных сертификатов и оплату доставки. Нельзя использовать их при оплате банковским переводом.</li>
-
-                           </ul>
-                        </div>
-                     </div>
+                  <div class="bonus__rules">
+                     <h2 class="bonus__rules-title">Правила использования Бонусной системы</h2>
+                     <p class="bonus__text-p">При регистрации в бонусной системе, вам начисляется 2000 баллов, 1 балл = 1 рублю.</p>
+                     <p class="bonus__text-p">При покупке вам начислится 5% от стоимости товара в виде баллов.</p>
+                     <p class="bonus__text-p">Тратить баллы можно на все товары, кроме тех, на которые установлено скидка.</p>
+                     <p class="bonus__text-p">Воспользоваться бонусной системой вы можете через нашего менеджера на сайте, <a href="#0" class="hover-change-color">по телефону</a> или в нашем магазине по адресу <a href="#0" class="hover-change-color">Москва, Оружейный переулок дом 5</a>.</p>
+                     <p class="bonus__text-p">Баллы за покупку товаров со скидкой не начисляются и не списываются. Если в одном заказе есть позиции со скидкой и без, для расчета баллов будут учитываться только товары по полной стоимости.</p>
+                     <p class="bonus__text-p">Бонусные баллы не начисляются за покупку подарочных сертификатов и оплату доставки. Нельзя использовать их при оплате банковским переводом.</p>
                   </div>
-                  <form class="profile__form order-2-min1024" action="#" method="post" name="profile_form" id="profile-form">
-                     <div class="profile__form-block">
-                        <div class="profile__form-item">
-                           <div class="profile__form-name">Имя</div>
-                           <div class="profile__form-input">
-                              <input type="text" placeholder="Иван">
+                  <div class="bonus__space hidden"></div>
+                  <div class="bonus__info">
+                     <div class="profile__info-body">
+                        <div class="profile__info-block">
+                           <div class="profile__info-name">Ваши <wbr>бонусы</div>
+                           <div class="profile__info-quantity">
+                              <span>1 балл = <wbr>1 ₽</span>
                            </div>
                         </div>
-                        <div class="profile__form-item">
-                           <div class="profile__form-name">Фамилия</div>
-                           <div class="profile__form-input">
-                              <input type="text" placeholder="Иванов">
+                        <div class="profile__info-bottom">
+                           <div class="profile__info-price">
+                              15 000 б
                            </div>
+                           <a class="profile__download black-button" href="checkout.html">Скачать карту лояльности</a>
                         </div>
                      </div>
-                     <div class="profile__form-block">
-                        <div class="profile__form-item">
-                           <div class="profile__form-name">Пол</div>
-                           <div class="profile__form-input" tabs>
-                              <div class="profile__form-input">
-                                 <button class="profile__form-size" type="button" tabs_button>
-                                    <sapan show_data>Выберите пол</sapan>
-                                    <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8F8F8F" stroke-width="1.5"></path>
-                                    </svg>
-                                 </button>
-                              </div>
-                              <div class="filter__content" tabs_content>
-                                 <ul class="filter__content-list" tabs_content-inner>
-                                    <li>
-                                       <label class="filter__item">
-                                          <span get_data>Мужской</span>
-                                          <input type="radio" name="sex" value="one">
-                                          <span class="filter__list-check">
-                                             <img class="hidden" src="./img/svg/check.svg" alt="">
-                                          </span>
-                                       </label>
+                     <div>
+                        <div class="card-template__tabs-item">
+                           <div class="card-template__tabs-button">
+                              <span class="card-template__tabs-name">история начислений</span>
+                              <span class="card-template__tabs-cross">
+                                 <img src="./img/svg/cross.svg" alt="крестик">
+                              </span>
+                           </div>
+                           <div class="card-template__tabs-text bonus__tabs scrollbar">
+                              <div class="card-template__tabs-text-shell">
+                                 <ul>
+                                    <li class="bonus__story">
+                                       <span class="bonus__story-date">23.09.2022</span>
+                                       <span>1 500 бонусов</span>
                                     </li>
-                                    <li>
-                                       <label class="filter__item">
-                                          <span get_data>Женский</span>
-                                          <input type="radio" name="sex" value="xs">
-                                          <span class="filter__list-check">
-                                             <img class="hidden" src="./img/svg/check.svg" alt="">
-                                          </span>
-                                       </label>
+                                    <li class="bonus__story">
+                                       <span class="bonus__story-date">23.09.2022</span>
+                                       <span>1 500 бонусов</span>
+                                    </li>
+                                    <li class="bonus__story">
+                                       <span class="bonus__story-date">23.09.2022</span>
+                                       <span>1 500 бонусов</span>
+                                    </li>
+                                    <li class="bonus__story">
+                                       <span class="bonus__story-date">23.09.2022</span>
+                                       <span>1 500 бонусов</span>
+                                    </li>
+                                    <li class="bonus__story">
+                                       <span class="bonus__story-date">23.09.2022</span>
+                                       <span>1 500 бонусов</span>
+                                    </li>
+                                    <li class="bonus__story">
+                                       <span class="bonus__story-date">23.09.2022</span>
+                                       <span>1 500 бонусов</span>
                                     </li>
                                  </ul>
                               </div>
                            </div>
                         </div>
-                        <div class="profile__form-item">
-                           <div class="profile__form-name">Дата рождения</div>
-                           <div class="profile__form-input">
-                              <div id="date_birth">дд.мм.гггг</div>
-                           </div>
-                        </div>
                      </div>
-                     <div class="profile__form-block">
-                        <div class="profile__form-item">
-                           <div class="profile__form-name">Телефон</div>
-                           <div class="profile__form-input">
-                              <input class="fone" type="text" name="phone" value="" id="phone" autocomplete="none">
-                           </div>
-                        </div>
-                        <div class="profile__form-item">
-                           <div class="profile__form-name">Email</div>
-                           <div class="profile__form-input">
-                              <input type="text" placeholder="Почта не указана">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="profile__form-item" tabs>
-                        <div class="profile__form-name">Размер одежды</div>
-                        <div class="profile__form-input">
-                           <button class="profile__form-size" type="button" tabs_button>
-                              <sapan show_data>Выберите размер</sapan>
-                              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8F8F8F" stroke-width="1.5"></path>
-                              </svg>
-                           </button>
-                        </div>
-                        <div class="filter__content" tabs_content>
-                           <ul class="filter__content-list" tabs_content-inner>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>One Size</span>
-                                    <input type="radio" name="size" value="one">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>XS</span>
-                                    <input type="radio" name="size" value="xs">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>S</span>
-                                    <input type="radio" name="size" value="s">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>M</span>
-                                    <input type="radio" name="size" value="m">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>L</span>
-                                    <input type="radio" name="size" value="l">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>XL</span>
-                                    <input type="radio" name="size" value="xl">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                              <li>
-                                 <label class="filter__item">
-                                    <span get_data>XXL</span>
-                                    <input type="radio" name="size" value="xxl">
-                                    <span class="filter__list-check">
-                                       <img class="hidden" src="./img/svg/check.svg" alt="">
-                                    </span>
-                                 </label>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="profile__buttons">
-                        <button class="black-button" type="submit">Сохранить изменения</button>
-                        <a class="hover-change-color" href="#0">Сменить пароль</a>
-                     </div>
-                  </form>
+                  </div>
+
+
+
+
+
                </div>
             </div>
          </section>
 
 
-         <section class="address block-margin-bottom">
-            <div class="address__container">
-               <form class="address__body" action="#0" method="post" name="address_body" id="address-body">
-                  <div class="address__block">
-                     <div class="address__title">Адрес <br>доставки</div>
-                     <div class="address__add-button hidden">
-                        <button type="button" class="address__add black-button" data-modal_open="get_address" modal-open>Добавить адрес +</button>
-                     </div>
-                  </div>
-                  <div class="address__item">
-                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
-                     <label class="address__item-buttons">
-                        <input type="radio" name="address" value="1" checked>
-                        <span class="address__basic transparent-button">Основной адрес</span>
-                        <button class="address__item-delete" type="button">
-                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
-                        </button>
-                     </label>
-                  </div>
-                  <div class="address__item">
-                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
-                     <label class="address__item-buttons">
-                        <input type="radio" name="address" value="2">
-                        <span class="address__basic transparent-button">Основной адрес</span>
-                        <button class=" address__item-delete" type="button">
-                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
-                        </button>
-                     </label>
-                  </div>
-                  <div class="address__item">
-                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
-                     <label class="address__item-buttons">
-                        <input type="radio" name="address" value="3">
-                        <span class="address__basic transparent-button">Основной адрес</span>
-                        <button class="address__item-delete" type="button">
-                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
-                        </button>
-                     </label>
-                  </div>
-                  <div class="address__item">
-                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
-                     <label class="address__item-buttons">
-                        <input type="radio" name="address" value="4">
-                        <span class="address__basic transparent-button">Основной адрес</span>
-                        <button class="address__item-delete" type="button">
-                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
-                        </button>
-                     </label>
-                  </div>
-                  <div class="address__item">
-                     <div class="address__item-text">123456, г. Москва, ул. Таганская, д. 32с1</div>
-                     <label class="address__item-buttons">
-                        <input type="radio" name="address" value="5">
-                        <span class="address__basic transparent-button">Основной адрес</span>
-                        <button class="address__item-delete" type="button">
-                           <img src="./img/svg/delete.svg" alt="иконка в виде корзины">
-                        </button>
-                     </label>
-                  </div>
-                  <div class="address__add-mobile">
-                     <button type="button" class="address__add black-button">Добавить адрес +</button>
-                  </div>
-
-               </form>
-            </div>
-         </section>
 
 
       </main>

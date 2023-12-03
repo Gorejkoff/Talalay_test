@@ -87,7 +87,7 @@ input[type="number"] {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0px;
+  margin: 0;
 }
 
 /* ============== шаблоны ============= */
@@ -4749,8 +4749,6 @@ a:hover .hover-line-change::before {
   font-size: var(--font-16);
 }
 
-.orders__total-quantity {}
-
 .orders__total-name-result,
 .orders__total-quantity-result {
   color: var(--color-black);
@@ -4990,8 +4988,6 @@ a:hover .hover-line-change::before {
   -ms-flex-align: center;
   align-items: center;
 }
-
-.mailings__check {}
 
 .mailings__check input {
   display: none;
@@ -6730,7 +6726,7 @@ a:hover .hover-line-change::before {
   }
 
   .shops__block:not(:last-child) {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   .shops__block iframe {

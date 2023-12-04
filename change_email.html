@@ -16,7 +16,7 @@
 <body>
 
 
-   <article id="banner-sale" class="banner-sale">
+   <div id="banner-sale" class="banner-sale">
       <div class="banner-sale__container">
          <div class="banner-sale__body">
             <a href="#0">
@@ -27,7 +27,7 @@
             </button>
          </div>
       </div>
-   </article>
+   </div>
 
 
    <div class="wrapper">
@@ -327,14 +327,21 @@
       <main class="main">
 
 
-         <section class="back__container">
-            <a href="index.html">
-               <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.1333 10.6732L1.46372 6.00357L6.1333 1.33398" stroke="#010101" stroke-width="1.5" />
-               </svg>
-               <span class="hover-underline">Назад</span>
-            </a>
-         </section>
+         <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div class="back__container">
+               <ol>
+                  <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                     <a href="profile.html" itemprop="item">
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M6.1333 10.6732L1.46372 6.00357L6.1333 1.33398" stroke="#010101" stroke-width="1.5" />
+                        </svg>
+                        <span class="hover-underline" itemprop="name">Назад</span>
+                        <meta itemprop="position" content="0">
+                     </a>
+                  </li>
+               </ol>
+            </div>
+         </nav>
 
 
          <section class="forms block-margin-bottom">
@@ -349,7 +356,7 @@
                      <div class="forms__name">На указанный адрес будет выслано письмо с ссылкой, при нажатии на которую, вы подтвердите Email</div>
                   </div>
                   <div class="forms__buttons">
-                     <a class="black-button" href="register_next.html">Отправить</a>
+                     <a class="black-button" href="change__email_next.html">Отправить</a>
                   </div>
                </form>
             </div>

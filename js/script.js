@@ -724,8 +724,6 @@ window.addEventListener('load', function (event) {
       });
       calendar.init();
       /* отображение даты */
-      // let newDate = new Date;
-      //  setDate(newDate.getDate(), newDate.getMonth(), newDate.getFullYear());
       function setDate(day, month, year) {
          calendarDate.innerHTML = day + '.' + month + '.' + year;
       }
@@ -754,7 +752,7 @@ window.addEventListener('load', function (event) {
       function setDate(day, month, year) {
          calendarDate.innerHTML = day + '.' + month + '.' + year;
       }
-      // calendar.selectedDates; - массив выбранной даты 
+      // calendar.selectedDates; - массив выбранной даты
    }
 })
 

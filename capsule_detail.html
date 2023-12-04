@@ -18,7 +18,7 @@
 <body>
 
 
-   <article id="banner-sale" class="banner-sale">
+   <div id="banner-sale" class="banner-sale">
       <div class="banner-sale__container">
          <div class="banner-sale__body">
             <a href="#0">
@@ -29,7 +29,7 @@
             </button>
          </div>
       </div>
-   </article>
+   </div>
 
 
    <div class="wrapper">
@@ -329,32 +329,33 @@
       <main class="main">
 
 
-         <section class="breadcrumb">
+         <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
             <div class="breadcrumb__container">
-               <div class="breadcrumb__shell">
-                  <ul class="breadcrumb__body">
-                     <li class="breadcrumb__item">
-                        <a href="index.html"><span class="hover-underline">Главная</span></a>
-                     </li>
-                     <li class="breadcrumb__item">
-                        <span class="breadcrumb__dot"></span>
-                     </li>
-                     <li class="breadcrumb__item">
-                        <a href="Capsules.html"><span class="hover-underline">Капсулы</span></a>
-                     </li>
-                     <li class="breadcrumb__item">
-                        <span class="breadcrumb__dot"></span>
-                     </li>
-                     <li class="breadcrumb__item">
-                        <span>Весна 2023</span>
-                     </li>
-                  </ul>
-               </div>
+               <ol class="breadcrumb__body">
+                  <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                     <a href="index.html" itemprop="item">
+                        <span class="hover-underline" itemprop="name">Главная</span>
+                        <meta itemprop="position" content="0">
+                     </a>
+                  </li>
+                  <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                     <a href="capsules.html" aria-current="page" itemprop="item">
+                        <span class="hover-underline" itemprop="name">Капсулы</span>
+                        <meta itemprop="position" content="1">
+                     </a>
+                  </li>
+                  <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                     <a href="capsule_detail.html" aria-current="page" itemprop="item">
+                        <span itemprop="name">Весна 2023</span>
+                        <meta itemprop="position" content="2">
+                     </a>
+                  </li>
+               </ol>
             </div>
-         </section>
+         </nav>
 
 
-         <section class="title">
+         <div class="title">
             <div class="title__container">
                <div class="title__body">
                   <h1 class="title__text">
@@ -367,7 +368,7 @@
                   </p>
                </div>
             </div>
-         </section>
+         </div>
 
 
          <section class="capsules-template block-margin-bottom">

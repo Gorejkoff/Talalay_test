@@ -17,7 +17,7 @@
 <body>
 
 
-   <article id="banner-sale" class="banner-sale">
+   <div id="banner-sale" class="banner-sale">
       <div class="banner-sale__container">
          <div class="banner-sale__body">
             <a href="#">
@@ -28,7 +28,7 @@
             </button>
          </div>
       </div>
-   </article>
+   </div>
 
 
    <div class="wrapper">
@@ -328,22 +328,23 @@
       <main class="main">
 
 
-         <section class="breadcrumb ">
+         <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
             <div class="breadcrumb__container">
                <div class="breadcrumb__shell product-card">
-                  <ul class="breadcrumb__body">
-                     <li class="breadcrumb__item item-back">
-                        <a href="#">
+                  <ol class="breadcrumb__body">
+                     <li class="breadcrumb__item item-back" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="index.html" itemprop="item">
                            <svg class="breadcrumb__arrow-back" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M6.1333 10.6732L1.46372 6.00357L6.1333 1.33398" stroke="#010101" stroke-width="1.5" />
                            </svg>
-                           <span class="breadcrumb__item-back hidden hover-underline">Вернуться в каталог</span>
+                           <span class="breadcrumb__item-back hidden hover-underline" itemprop="name">Вернуться в каталог</span>
+                           <meta itemprop="position" content="0">
                         </a>
                      </li>
-                  </ul>
+                  </ol>
                </div>
             </div>
-         </section>
+         </nav>
 
 
          <section class="card-template block-margin-bottom">

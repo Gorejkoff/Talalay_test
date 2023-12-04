@@ -564,6 +564,23 @@ a:hover .hover-line-change::before {
   align-items: center;
 }
 
+.breadcrumb__item+.breadcrumb__item::before {
+  content: '';
+  margin-right: 15px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-grey);
+}
+
+.breadcrumb__item:last-child a {
+  pointer-events: none;
+}
+
+.back__container .breadcrumb__item:last-child a {
+  pointer-events: all;
+}
+
 .breadcrumb__item.item-back {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -590,6 +607,7 @@ a:hover .hover-line-change::before {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  pointer-events: all;
 }
 
 .breadcrumb__arrow-back {
@@ -599,14 +617,6 @@ a:hover .hover-line-change::before {
 
 .breadcrumb__arrow-back path {
   stroke: var(--color-white);
-}
-
-.breadcrumb__dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: var(--color-grey);
 }
 
 /* ======== TITLE ======= */

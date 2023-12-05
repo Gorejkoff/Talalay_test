@@ -329,80 +329,80 @@
       <main class="main">
 
 
-         <section class="checkout-step">
+         <div class="checkout-step">
             <div class="checkout-step__container">
-               <div class="checkout-step__body">
-                  <div class="checkout-step__circle black-color">
+               <ol class="checkout-step__body">
+                  <li class="checkout-step__circle black-color">
                      1
                      <div class="checkout-step__text">Корзина</div>
-                  </div>
-                  <div class="checkout-step__line"></div>
-                  <div class="checkout-step__circle">
+                  </li>
+                  <li class="checkout-step__line"></li>
+                  <li class="checkout-step__circle">
                      2
                      <div class="checkout-step__text">Оформление заказа</div>
-                  </div>
-                  <div class="checkout-step__line gray-color"></div>
-                  <div class="checkout-step__circle gray-color">
+                  </li>
+                  <li class="checkout-step__line gray-color"></li>
+                  <li class="checkout-step__circle gray-color">
                      3
                      <div class="checkout-step__text gray-color">Оплата</div>
-                  </div>
-               </div>
+                  </li>
+               </ol>
             </div>
-         </section>
+         </div>
 
 
          <section class="checkout block-margin-bottom">
             <div class="checkout__container">
-               <div class="checkout__title">Оформление заказа</div>
+               <h1 class="checkout__title">Оформление заказа</h1>
                <div class="checkout__body">
                   <form class="checkout__form" action="#0" method="post" name="checkout-form" id="checkout_form">
 
-                     <div class="checkout__title-form">Личные данные</div>
+                     <h2 class="checkout__title-form">Личные данные</h2>
                      <div class="checkout__block-input">
                         <div class="forms__block">
-                           <div class="forms__name">Имя</div>
+                           <label for="name" class="forms__name">Имя</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="Иван">
+                              <input class="forms__text forms__input" id="name" type="text" placeholder="Иван">
                            </div>
                         </div>
                         <div class="forms__block">
-                           <div class="forms__name">Фамилия</div>
+                           <label for="surname" class="forms__name">Фамилия</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="Иванов">
+                              <input class="forms__text forms__input" id="surname" type="text" placeholder="Иванов">
                            </div>
                         </div>
                      </div>
                      <div class="checkout__block-input">
                         <div class="forms__block">
-                           <div class="forms__name">E-mail</div>
+                           <label for="email" class="forms__name">E-mail</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="your_email@name.ru">
+                              <input class="forms__text forms__input" type="text" id="email" placeholder="your_email@name.ru">
                            </div>
                         </div>
                         <div class="forms__block">
-                           <div class="forms__name">Телефон</div>
+                           <label for="phone" class="forms__name">Телефон</label>
                            <div class="forms__shell">
-                              <input class="forms__fone fone" type="text" name="phone" value="" id="phone" autocomplete="none">
+                              <input class="forms__fone fone" type="tel" name="phone" value="" id="phone" autocomplete="off">
                            </div>
                         </div>
                      </div>
                      <div class="checkout__block-input">
                         <div class="forms__block">
-                           <div class="forms__name">Телефон</div>
+                           <label for="code" class="forms__name">Телефон</label>
                            <div class="forms__block">
                               <div class="forms__shell">
-                                 <input class="forms__fone" placeholder="Код из СМС" type="text" autocomplete="none" maxlength="4">
+                                 <input class="forms__fone" id="code" placeholder="Код из СМС" type="tel" autocomplete="off" maxlength="4">
                               </div>
                               <div class="forms__hint" id="output">Введите код, высланный на номер +7 912 123-45-67</div>
                               <div class="forms__hint gray">Повторная отправка через <span class="counter" data-counter="35">35</span> сек</div>
                            </div>
                         </div>
                      </div>
-                     <div class="checkout__title-form">Данные для доставки и оплаты</div>
+                     <h3 class="checkout__title-form">Данные для доставки и оплаты</h3>
                      <div class="forms__block">
-                        <div class="forms__name">Населенный пункт</div>
+                        <label for="city" class="forms__name">Населенный пункт</label>
                         <div class="forms__shell">
-                           <input class="forms__text forms__input" type="text" placeholder="Москва">
+                           <input class="forms__text forms__input" id="city" type="text" placeholder="Москва">
                         </div>
                      </div>
                      <div class="forms__radio">
@@ -425,29 +425,29 @@
                      </div>
                      <div class="checkout__block-input">
                         <div class="forms__block">
-                           <div class="forms__name">Улица</div>
+                           <label for="street" class="forms__name">Улица</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="Ивановская">
+                              <input class="forms__text forms__input" type="text" id="street" placeholder="Ивановская">
                            </div>
                         </div>
                         <div class="forms__block">
-                           <div class="forms__name">Дом</div>
+                           <label for="house" class="forms__name">Дом</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="10">
+                              <input class="forms__text forms__input" type="text" id="house" placeholder="10">
                            </div>
                         </div>
                      </div>
                      <div class="checkout__block-input">
                         <div class="forms__block">
-                           <div class="forms__name">Корпус / строение</div>
+                           <label for="body" class="forms__name">Корпус / строение</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="Не обязательно">
+                              <input class="forms__text forms__input" type="text" id="body" placeholder="Не обязательно">
                            </div>
                         </div>
                         <div class="forms__block">
-                           <div class="forms__name">Квартира / офис</div>
+                           <label for="office" class="forms__name">Квартира / офис</label>
                            <div class="forms__shell">
-                              <input class="forms__text forms__input" type="text" placeholder="123">
+                              <input class="forms__text forms__input" type="text" id="office" placeholder="123">
                            </div>
                         </div>
                      </div>
@@ -465,39 +465,39 @@
                         </div>
                         <div class="forms__block">
                            <div class="forms__name">Выберите время доставки</div>
-                           <div class="forms__shell" tabs>
-                              <button class="forms__time" type="button" tabs_button>
-                                 <span show_data>8:00 - 12:00</span>
+                           <div class="forms__shell tabs">
+                              <button class="forms__time tabs-button" type="button">
+                                 <span class="show-data">8:00 - 12:00</span>
                                  <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8F8F8F" stroke-width="1.5" />
                                  </svg>
                               </button>
-                              <div class="filter__content" tabs_content>
-                                 <ul class="filter__content-list" tabs_content-inner>
+                              <div class="filter__content tabs-content">
+                                 <ul class="filter__content-list tabs-content-inner">
                                     <li>
                                        <label class="filter__item">
-                                          <span get_data>8:00 - 12:00</span>
+                                          <span class="get-data">8:00 - 12:00</span>
                                           <input type="radio" name="time" value="1" checked>
                                           <span class="filter__list-check">
-                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="галочка, обозначение выбора">
                                           </span>
                                        </label>
                                     </li>
                                     <li>
                                        <label class="filter__item">
-                                          <span get_data> 12:00 - 16:00</span>
+                                          <span class="get-data"> 12:00 - 16:00</span>
                                           <input type="radio" name="time" value="1">
                                           <span class="filter__list-check">
-                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="галочка, обозначение выбора">
                                           </span>
                                        </label>
                                     </li>
                                     <li>
                                        <label class="filter__item">
-                                          <span get_data>16:00 - 20:00</span>
+                                          <span class="get-data">16:00 - 20:00</span>
                                           <input type="radio" name="time" value="1">
                                           <span class="filter__list-check">
-                                             <img class="hidden" src="./img/svg/check.svg" alt="">
+                                             <img class="hidden" src="./img/svg/check.svg" alt="галочка, обозначение выбора">
                                           </span>
                                        </label>
                                     </li>
@@ -509,45 +509,45 @@
                      <div class="forms__radio">
                         <div class="forms__radio-title">Способ доставки</div>
                         <label class="forms__radio-block">
-                           <input type="radio" name="payments" value="" checked>
+                           <input type="radio" name="payments" value="1" checked>
                            <span class="forms__radio-check"></span>
                            <span>Банковской картой на сайте</span>
                         </label>
                         <label class="forms__radio-block">
-                           <input type="radio" name="payments" value="">
+                           <input type="radio" name="payments" value="2">
                            <span class="forms__radio-check"></span>
                            <span>Наличными курьеру</span>
                         </label>
                         <label class="forms__radio-block">
-                           <input type="radio" name="payments" value="">
+                           <input type="radio" name="payments" value="3">
                            <span class="forms__radio-check"></span>
                            <span>Банковской картой курьеру</span>
                         </label>
                      </div>
                      <div class="forms__block">
-                        <div class="forms__name">Комментарий</div>
+                        <label for="comment" class="forms__name">Комментарий</label>
                         <div class="forms__shell">
-                           <textarea class="forms__textarea" name="" id="" placeholder="Не обязательно"></textarea>
+                           <textarea class="forms__textarea" name="comment" id="comment" placeholder="Не обязательно"></textarea>
                         </div>
                      </div>
                   </form>
 
 
-                  <div class="checkout__total" checkout_tab>
-                     <div class="checkout__total-body" tabs>
+                  <div class="checkout__total checkout-tab">
+                     <div class="checkout__total-body tabs">
                         <div class="checkout__total-title">
                            Корзина
-                           <button class="checkout__total-open" type="button" tabs_button>
+                           <button class="checkout__total-open tabs-button" type="button">
                               <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M0.991251 0.799804L7.99563 7.80418L15 0.799805" stroke="#8f8f8f" stroke-width="1.5" />
                               </svg>
                            </button>
                         </div>
-                        <div class="checkout__total-list" tabs_content>
-                           <div tabs_content-inner>
+                        <div class="checkout__total-list tabs-content">
+                           <div class="tabs-content-inner">
                               <div class="checkout__card">
                                  <div class="checkout__card-image">
-                                    <img src="./img/png/dress.png" alt="">
+                                    <img src="./img/png/dress.png" alt="изоброжение одежды">
                                  </div>
                                  <div class="checkout__card-text">
                                     <div class="checkout__card-title">Платье осеннее</div>
@@ -560,12 +560,12 @@
                                     <div class="checkout__card-data"> Количество: 2</div>
                                  </div>
                                  <button type="button">
-                                    <img src="./img/svg/delete.svg" alt="">
+                                    <img src="./img/svg/delete.svg" alt="иконка корзины, удалить">
                                  </button>
                               </div>
                               <div class="checkout__card">
                                  <div class="checkout__card-image">
-                                    <img src="./img/png/dress.png" alt="">
+                                    <img src="./img/png/dress.png" alt="изоброжение одежды">
                                  </div>
                                  <div class="checkout__card-text">
                                     <div class="checkout__card-title">Платье осеннее</div>
@@ -578,7 +578,7 @@
                                     <div class="checkout__card-data"> Количество: 2</div>
                                  </div>
                                  <button type="button">
-                                    <img src="./img/svg/delete.svg" alt="">
+                                    <img src="./img/svg/delete.svg" alt="иконка корзины, удалить">
                                  </button>
                               </div>
                            </div>
@@ -660,14 +660,14 @@
       <footer class="footer">
          <div class="footer__container">
             <div class="footer__body">
-               <section class="footer__shell">
+               <div class="footer__shell">
                   <div class="footer__form">
                      <form id="email-form" action=#0 method="post" name="form-email">
                         <h3 class="footer__form-title">
                            Узнавайте о наших новинках первыми и получайте уникальные предложения, в свой почтовый ящик.
                         </h3>
                         <div class="footer__form-input">
-                           <input class="footer__form-input-item" type="text" placeholder="email" name="enter-email" id="email-enter">
+                           <input class="footer__form-input-item" type="email" placeholder="email" name="enter-email" id="email-enter">
                            <button class="footer__form-input-button" type="submit">
                               <span>
                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
@@ -735,8 +735,8 @@
                         </ul>
                      </div>
                   </nav>
-               </section>
-               <article class="footer__lower">
+               </div>
+               <div class="footer__lower">
                   <div class="footer__card">
                      <div class="footer__card">
                         <img src="./img/svg/MASTERCARD.svg" width="49" height="38" alt="платёжная карточка мастеркарт">
@@ -780,10 +780,10 @@
                   <div class="footer__logo hidden">
                      <img src="./img/svg/Logo-2.svg" width="27" height="60" alt="Логотип брэнда TALALAY" decoding="async">
                   </div>
-               </article>
+               </div>
             </div>
          </div>
-         <article class="footer__bottom">
+         <div class="footer__bottom">
             <div class="footer__container">
                <ul class="footer__bottom-body">
                   <li class="footer__bottom-item">
@@ -797,7 +797,7 @@
                   </li>
                </ul>
             </div>
-         </article>
+         </div>
 
          <video class="footer__background" src="./video/footer-mini.mov" muted autoplay loop preload></video>
 

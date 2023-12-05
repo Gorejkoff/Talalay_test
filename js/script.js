@@ -363,8 +363,8 @@ window.addEventListener('load', function (event) {
       FORM_CARD_BUTTON && moveButtonCardSubmit(mediaQuery_1024.matches);
       FILTER_CATALOG && mediaQuery_1024.matches && moveUpCatalog();
       FILTER_CATALOG && !mediaQuery_1024.matches && moveBackCatalog();
-      FILTER_CATALOG && !mediaQuery_1024.matches && setTabAttribute(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
-      FILTER_CATALOG && mediaQuery_1024.matches && removeTabAttribute(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
+      FILTER_CATALOG && !mediaQuery_1024.matches && addTabClass(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
+      FILTER_CATALOG && mediaQuery_1024.matches && removeTabClass(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
    });
    BRAND_MISSION_SLIDER && initSlider(mediaQuery_767.matches, BRAND_MISSION_SLIDER, BRAND_MISSION_SLIDER_BODY, BRAND_MISSION_SLIDER_ITEM);
    TEAM_SLIDER && initSlider(mediaQuery_767.matches, TEAM_SLIDER, TEAM_SLIDER_BODY, TEAM_SLIDER_ITEM);
@@ -373,8 +373,8 @@ window.addEventListener('load', function (event) {
    FORM_CARD_BUTTON && moveButtonCardSubmit(mediaQuery_1024.matches);
    FILTER_CATALOG && mediaQuery_1024.matches && moveUpCatalog();
    FILTER_CATALOG && !mediaQuery_1024.matches && moveBackCatalog();
-   FILTER_CATALOG && !mediaQuery_1024.matches && setTabAttribute(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
-   FILTER_CATALOG && mediaQuery_1024.matches && removeTabAttribute(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
+   FILTER_CATALOG && !mediaQuery_1024.matches && addTabClass(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
+   FILTER_CATALOG && mediaQuery_1024.matches && removeTabClass(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
 
 
    if (document.querySelector('.observer-img')) {
@@ -568,7 +568,7 @@ window.addEventListener('load', function (event) {
    class TabsOpen {
       constructor(tabs, addFunctionResize, addFunctionAction) {
          this.tabs = document.querySelector(`${tabs}`);
-         this.tabsList = this.tabs.querySelectorAll('[tabs]');
+         this.tabsList = this.tabs.querySelectorAll('.tabs');
          this.addFunctionResize = addFunctionResize;
          this.addFunctionAction = addFunctionAction;
       }
@@ -577,66 +577,66 @@ window.addEventListener('load', function (event) {
          this.addFunctionResize && window.addEventListener('resize', this.externalFunction);
       };
       examination = (event) => {
-         if (event.target.closest('[tabs_button]') && !event.target.closest('[tabs]').classList.contains('active')) {
+         if (event.target.closest('.tabs-button') && !event.target.closest('.tabs').classList.contains('active')) {
             this.tabsList.forEach((element) => {
-               element == event.target.closest('[tabs]') ? this.open(element) : this.close(element);
+               element == event.target.closest('.tabs') ? this.open(element) : this.close(element);
             })
-         } else if (!event.target.closest('[tabs_content]')) {
+         } else if (!event.target.closest('.tabs-content')) {
             this.tabsList.forEach(element => this.close(element));
          }
-         if (event.target.closest('[tabs_content-inner]') &&
+         if (event.target.closest('.tabs-content-inner') &&
             this.addFunctionAction &&
-            event.target.closest('[tabs_content-inner]').querySelector('[get_data]')) {
+            event.target.closest('.tabs-content-inner').querySelector('.get-data')) {
             this.addFunctionAction(event)
          }
       }
       open = (element) => {
-         element.querySelector('[tabs_content]').style.height = this.getSize(element) + 'px';
+         element.querySelector('.tabs-content').style.height = this.getSize(element) + 'px';
          element.classList.add('active');
       };
       close = (element) => {
-         element.querySelector('[tabs_content]').style.height = '';
+         element.querySelector('.tabs-content').style.height = '';
          element.classList.remove('active');
       };
-      getSize = (element) => { return element.querySelector('[tabs_content-inner]').clientHeight };
+      getSize = (element) => { return element.querySelector('.tabs-content-inner').clientHeight };
       externalFunction = () => { this.addFunctionResize() };
    }
    /* проверка, изменение состояния filter__catalog */
-   FILTER_SORTING && mediaQuery_767.matches && setTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
-   FILTER_SORTING && !mediaQuery_767.matches && removeTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
+   FILTER_SORTING && mediaQuery_767.matches && addTabClass(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
+   FILTER_SORTING && !mediaQuery_767.matches && removeTabClass(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
 
    /* инициализация табов фильтра */
-   if (document.querySelector('[tabs_filter]')) {
-      const FILTER_TABS = new TabsOpen('[tabs_filter]', changeList).init();
+   if (document.querySelector('.tabs-filter')) {
+      const FILTER_TABS = new TabsOpen('.tabs-filter', changeList).init();
    }
    /* корзина, показать выбранные товары в мобильном */
-   if (!document.querySelector('[tabs_filter]') && document.querySelector('[tabs]')) {
+   if (!document.querySelector('.tabs-filter') && document.querySelector('.tabs')) {
       const TABS = new TabsOpen('main', false, changeData).init();
    }
 
    /* изменение состояния filter__catalog */
    function changeList() {
-      mediaQuery_767.matches && setTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
-      !mediaQuery_767.matches && removeTabAttribute(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
-      this.tabsList = this.tabs.querySelectorAll('[tabs]');
+      mediaQuery_767.matches && addTabClass(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
+      !mediaQuery_767.matches && removeTabClass(FILTER_SORTING, FILTER_SORTING_TITLE, FILTER_SORTING_CONTENT, FILTER_SORTING_LIST);
+      this.tabsList = this.tabs.querySelectorAll('.tabs');
    }
-   function setTabAttribute(tabs, tabs_button, tabs_content, tabs_inner) {
-      tabs.setAttribute('tabs', '');
-      tabs_button.setAttribute('tabs_button', '');
-      tabs_content.setAttribute('tabs_content', '');
-      tabs_inner.setAttribute('tabs_content-inner', '');
+   function addTabClass(tabs, tabs_button, tabs_content, tabs_inner) {
+      tabs.classList.add('tabs');
+      tabs_button.classList.add('tabs-button');
+      tabs_content.classList.add('tabs-content');
+      tabs_inner.classList.add('tabs-content-inner');
    }
-   function removeTabAttribute(tabs, tabs_button, tabs_content, tabs_inner) {
-      tabs.removeAttribute('tabs');
-      tabs_button.removeAttribute('tabs_button');
-      tabs_content.removeAttribute('tabs_content');
-      tabs_inner.removeAttribute('tabs_content-inner');
+   function removeTabClass(tabs, tabs_button, tabs_content, tabs_inner) {
+      tabs.classList.remove('tabs');
+      tabs_button.classList.remove('tabs-button');
+      tabs_content.classList.remove('tabs-content');
+      tabs_inner.classList.remove('tabs-content-inner');
    }
    /* запись выбранного заначения поле выбора */
    function changeData(event) {
       if (event.target.closest('.filter__item')) {
-         event.target.closest('[tabs]').querySelector('[show_data]').innerHTML
-            = event.target.closest('.filter__item').querySelector('[get_data]').innerHTML;
+         event.target.closest('.tabs').querySelector('.show-data').innerHTML
+            = event.target.closest('.filter__item').querySelector('.get-data').innerHTML;
       }
    }
 
@@ -645,27 +645,27 @@ window.addEventListener('load', function (event) {
    function moveBackCatalog() { FILTER_BLOCK.prepend(FILTER_CATALOG) };
 
    /* смена картинок при наведении на зоны карточки */
-   if (document.querySelector('[change_img]')) {
+   if (document.querySelector('.change_img')) {
       document.body.addEventListener('mouseover', (event) => {
-         if (event.target.closest('[change_img]')) { changeImg(event) }
+         if (event.target.closest('.change_img')) { changeImg(event) }
       })
       document.body.addEventListener('mouseout', (event) => {
-         if (event.target.closest('[change_img]') &&
-            event.target.closest('[change_img]') !==
-            event.relatedTarget.closest('[change_img]')) { returnImg(event) }
+         if (event.target.closest('.change_img') &&
+            event.target.closest('.change_img') !==
+            event.relatedTarget.closest('.change_img')) { returnImg(event) }
       })
       function changeImg(event) {
          if (!event.target.closest('.slider-card__favorites') &&
             !event.target.closest('.button-capsules-more')) {
             let number = event.target.closest('.change-img').dataset.slide;
-            let listImg = event.target.closest('[change_img]').querySelectorAll('img');
+            let listImg = event.target.closest('.change_img').querySelectorAll('img');
             listImg.forEach((e) => {
                e.classList.toggle('hidden', e.dataset.slide !== number)
             })
          }
       }
       function returnImg(event) {
-         let listImg = event.target.closest('[change_img]').querySelectorAll('img');
+         let listImg = event.target.closest('.change_img').querySelectorAll('img');
          listImg.forEach((e) => { e.classList.toggle('hidden', e.dataset.slide !== '1') })
       }
    }
@@ -801,29 +801,29 @@ if (document.querySelector('.get-address__buttons')) {
 }
 
 /* открывает, закрывает модальные окна. */
-if (document.querySelector('[modal-open]')) {
+if (document.querySelector('.modal-open')) {
    document.addEventListener('click', (event) => {
-      if (event.target.closest('[modal-open]')) { openModal(event) }
-      if (event.target.closest('[modal-close]')) { testModalStopClose(event) }
+      if (event.target.closest('.modal-open')) { openModal(event) }
+      if (event.target.closest('.modal-close')) { testModalStopClose(event) }
    })
 }
 function openModal(event) {
-   let modalElement = event.target.closest('[modal-open]').dataset.modal_open;
+   let modalElement = event.target.closest('.modal-open').dataset.modal_open;
    if (typeof modalElement !== "undefined") {
       document.querySelector(`#${modalElement}`).classList.add('modal-visible');
       document.body.classList.add('body-overflow')
    }
 }
 function testModalStopClose(event) {
-   if (event.target.closest('[modal-stop-close]') &&
-      event.target.closest('[modal-close]') !==
-      event.target.closest('[modal-stop-close]').querySelector('[modal-close]')) {
+   if (event.target.closest('.modal-stop-close') &&
+      event.target.closest('.modal-close') !==
+      event.target.closest('.modal-stop-close').querySelector('.modal-close')) {
       return
    }
    closeModal(event);
 }
 function closeModal(event) {
-   event.target.closest('[modal-hidden]').classList.remove('modal-visible');
+   event.target.closest('.modal-hidden').classList.remove('modal-visible');
    if (!document.querySelector('.modal-visible')) {
       document.body.classList.remove('body-overflow');
    }

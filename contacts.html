@@ -6,6 +6,17 @@
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
    <meta name="viewport" content="width=device-width">
 
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Black.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Bold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Book.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-ExtraBold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Light.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Medium.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Regular.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-SemiBold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Thin.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Inter/Inter-Regular.woff2" crossorigin>
+
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
    <link rel="stylesheet" href="./css/style.css?_V=2">
@@ -37,7 +48,7 @@
                <div class="header__body">
                   <a href="index.html" class="header__logo">
                      <img class="header__logo-big hidden" width="232" height="10" src="./img/svg/Logo.svg" alt="модель одежды" decoding="async">
-                     <img class="header__logo-smoll" width="14" height="32" src="./img/svg/Logo-2.svg" alt="модель одежды" decoding="async">
+                     <img class="header__logo-small" width="14" height="32" src="./img/svg/Logo-2.svg" alt="модель одежды" decoding="async">
                   </a>
                   <div class="header__menu">
                      <div id="burger-menu" class="header__menu-shell">
@@ -160,7 +171,7 @@
                                              <a href="#0"><span class="hover-underline">Шорты</span></a>
                                           </li>
                                           <li class="header__submenu-item">
-                                             <a href=#0><span class="hover-underline">Платья</span></a>
+                                             <a href="#0"><span class="hover-underline">Платья</span></a>
                                           </li>
                                           <li class="header__submenu-item">
                                              <a href="#0"><span class="hover-underline">Жакеты</span></a>
@@ -358,32 +369,32 @@
 
          <section class="contacts">
             <div class="contacts__container">
-               <div class="contacts__body">
+               <div class="contacts__body" itemscope itemtype="http://schema.org/ClothingStore">
                   <div class="contacts__support">
-                     <h2 class="contacts__support-title">Клиентская<br> поддержка</h2>
+                     <h2 class="contacts__support-title" itemprop="name">Клиентская<br> поддержка</h2>
                      <div class="contacts__support-mode">
                         <div class="contacts__support-mode-title">Режим работы</div>
                         <div class="contacts__support-mode-block">
-                           <div class="contacts__support-mode-text">Понедельник-Пятница,<br> с 10:00 до 18:00 (МСК)</div>
-                           <div class="contacts__support-mode-text">Суббота-Воскресенье,<br> с 10:00 до 17:00 (МСК)</div>
+                           <time class="contacts__support-mode-text" itemprop="openingHours" datetime="Mo-Fr 10:00-18:00">Понедельник-Пятница,<br> с 10:00 до 18:00 (МСК)</time>
+                           <time class="contacts__support-mode-text" itemprop="openingHours" datetime="Tu-Th 10:00-17:00">Суббота-Воскресенье,<br> с 10:00 до 17:00 (МСК)</time>
                         </div>
                      </div>
                   </div>
-                  <div class="contacts__item">
+                  <div class="contacts__item" itemprop="address">
                      <div class="contacts__item-name">Телефон</div>
-                     <div class="contacts__item-text">+7 977 616-14-46</div>
+                     <div class="contacts__item-text" itemprop="telephone">+7 977 616-14-46</div>
                      <div class="contacts__item-name">Email</div>
-                     <div class="contacts__item-text">info@alexandra<wbr>talalay.com</div>
+                     <div class="contacts__item-text" itemprop="email">info@alexandra<wbr>talalay.com</div>
                   </div>
                   <div class="contacts__network">
                      <div class="contacts__network-name">Социальные сети</div>
                      <div class="contacts__network-items">
-                        <a href="#0" class="hover-underline">
+                        <a href="#0" class="hover-underline" itemprop="url">
                            <svg width="49" height="30" viewBox="0 0 49 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M3.84375 29.3516C2.95833 29.3516 2.23568 29.0911 1.67578 28.5703C1.11589 28.0365 0.835938 27.3268 0.835938 26.4414C0.835938 25.569 1.11589 24.8724 1.67578 24.3516C2.23568 23.8177 2.95833 23.5508 3.84375 23.5508C4.74219 23.5508 5.46484 23.8177 6.01172 24.3516C6.55859 24.8724 6.83203 25.569 6.83203 26.4414C6.83203 27.3398 6.55859 28.0495 6.01172 28.5703C5.46484 29.0911 4.74219 29.3516 3.84375 29.3516ZM11.1203 29V0.992188H15.9641V29H11.1203ZM34.8422 29.5273C32.837 29.5273 30.9685 29.1758 29.2367 28.4727C27.5049 27.7565 26.0141 26.7734 24.7641 25.5234C23.5141 24.2604 22.531 22.724 21.8148 20.9141C21.1117 19.0911 20.7602 17.1185 20.7602 14.9961C20.7602 12.1576 21.3721 9.63802 22.5961 7.4375C23.8201 5.22396 25.5128 3.51172 27.6742 2.30078C29.8357 1.08984 32.2771 0.484375 34.9984 0.484375C38.3057 0.484375 41.1313 1.35677 43.475 3.10156C45.8188 4.84635 47.4594 7.22266 48.3969 10.2305H43.1625C42.4073 8.53776 41.3396 7.22917 39.9594 6.30469C38.5792 5.38021 36.9255 4.91797 34.9984 4.91797C32.225 4.91797 29.9724 5.84896 28.2406 7.71094C26.5089 9.57292 25.643 12.0013 25.643 14.9961C25.643 18.0039 26.5219 20.4388 28.2797 22.3008C30.0505 24.1497 32.3813 25.0742 35.2719 25.0742C37.6547 25.0742 39.6729 24.4232 41.3266 23.1211C42.9932 21.819 44.0154 20.0872 44.393 17.9258H34.432V13.8047H48.6703V29H44.5492V24.9961H44.393C43.3904 26.4935 42.0622 27.6263 40.4086 28.3945C38.768 29.1497 36.9125 29.5273 34.8422 29.5273Z" fill="#010101" />
                            </svg>
                         </a>
-                        <a href="#0" class="hover-underline">
+                        <a href="#0" class="hover-underline" itemprop="url">
                            <svg width="80" height="29" viewBox="0 0 80 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M3.84375 28.3516C2.95833 28.3516 2.23568 28.0911 1.67578 27.5703C1.11589 27.0365 0.835938 26.3268 0.835938 25.4414C0.835938 24.569 1.11589 23.8724 1.67578 23.3516C2.23568 22.8177 2.95833 22.5508 3.84375 22.5508C4.74219 22.5508 5.46484 22.8177 6.01172 23.3516C6.55859 23.8724 6.83203 24.569 6.83203 25.4414C6.83203 26.3398 6.55859 27.0495 6.01172 27.5703C5.46484 28.0911 4.74219 28.3516 3.84375 28.3516ZM54.1086 -0.0078125L43.9914 28H38.4641L30.9445 6.59375H30.7883L23.2688 28H17.7023L7.62422 -0.0078125H12.6633L20.4367 21.6719H20.593L28.1906 -0.0078125H33.5422L41.1398 21.6719H41.3156L49.0695 -0.0078125H54.1086ZM79.3734 28H74.2562L71.5609 21.7109H58.0844L55.4086 28H50.2914L62.2055 -0.0078125H67.4398L79.3734 28ZM59.8422 17.3945H69.8031L64.9203 5.96875H64.7641L59.8422 17.3945Z" fill="#010101" />
                            </svg>
@@ -392,41 +403,37 @@
                   </div>
                </div>
                <div class="contacts__link">
-                  <div class="contacts__link-block">
-                     <div class="contacts__link-name">Отдел работы с клиентами</div>
+                  <div class="contacts__link-block" itemscope itemtype="http://schema.org/ContactPoint">
+                     <div class="contacts__link-name" itemprop="name">Отдел работы с клиентами</div>
                      <div>
-                        <a href="#0" class="hover-change-color">client@alexandratalalay.com</a>
+                        <a href="#0" class="hover-change-color" itemprop="email">client@alexandratalalay.com</a>
                      </div>
                   </div>
-                  <div class="contacts__link-block">
-                     <div class="contacts__link-name">Для моделей и фотографов</div>
+                  <div class="contacts__link-block" itemscope itemtype="http://schema.org/ContactPoint">
+                     <div class="contacts__link-name" itemprop="name">Для моделей и фотографов</div>
                      <div>
-                        <a href="#0" class="hover-change-color">content@alexandratalalay.com</a>
+                        <a href="#0" class="hover-change-color" itemprop="email">content@alexandratalalay.com</a>
                      </div>
                   </div>
-                  <div class="contacts__link-block">
-                     <div class="contacts__link-name">PR и Медиа</div>
+                  <div class="contacts__link-block" itemscope itemtype="http://schema.org/ContactPoint">
+                     <div class="contacts__link-name" itemprop="name">PR и Медиа</div>
                      <div>
-                        <a href="#0" class="hover-change-color">pr@alexandratalalay.com</a>
+                        <a href="#0" class="hover-change-color" itemprop="email">pr@alexandratalalay.com</a>
                      </div>
                   </div>
-                  <div class="contacts__link-block">
-                     <div class="contacts__link-name">Для резюме</div>
+                  <div class="contacts__link-block" itemscope itemtype="http://schema.org/ContactPoint">
+                     <div class="contacts__link-name" itemprop="name">Для резюме</div>
                      <div>
-                        <a href="#0" class="hover-change-color">resume@alexandratalalay.com</a>
+                        <a href="#0" class="hover-change-color" itemprop="email">resume@alexandratalalay.com</a>
                      </div>
                   </div>
-                  <div class="contacts__link-block">
-                     <div class="contacts__link-name">Производство</div>
+                  <div class="contacts__link-block" itemscope itemtype="http://schema.org/ContactPoint">
+                     <div class="contacts__link-name" itemprop="name">Производство</div>
                      <div>
-                        <a href="#0" class="hover-change-color">product@alexandratalalay.com</a>
+                        <a href="#0" class="hover-change-color" itemprop="email">product@alexandratalalay.com</a>
                      </div>
                   </div>
                </div>
-
-
-
-
             </div>
          </section>
 
@@ -439,7 +446,7 @@
             <div class="footer__body">
                <div class="footer__shell">
                   <div class="footer__form">
-                     <form id="email-form" action=#0 method="post" name="form-email">
+                     <form id="email-form" action="#0" method="post" name="form-email">
                         <h3 class="footer__form-title">
                            Узнавайте о наших новинках первыми и получайте уникальные предложения, в свой почтовый ящик.
                         </h3>

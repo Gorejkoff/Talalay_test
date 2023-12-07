@@ -6,6 +6,17 @@
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
    <meta name="viewport" content="width=device-width">
 
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Black.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Bold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Book.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-ExtraBold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Light.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Medium.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Regular.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-SemiBold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Thin.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Inter/Inter-Regular.woff2" crossorigin>
+
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
    <link rel="stylesheet" href="./css/swiper-style.css">
@@ -38,7 +49,7 @@
                <div class="header__body">
                   <a href="index.html" class="header__logo">
                      <img class="header__logo-big hidden" width="232" height="10" src="./img/svg/Logo.svg" alt="модель одежды" decoding="async">
-                     <img class="header__logo-smoll" width="14" height="32" src="./img/svg/Logo-2.svg" alt="модель одежды" decoding="async">
+                     <img class="header__logo-small" width="14" height="32" src="./img/svg/Logo-2.svg" alt="модель одежды" decoding="async">
                   </a>
                   <div class="header__menu">
                      <div id="burger-menu" class="header__menu-shell">
@@ -161,7 +172,7 @@
                                              <a href="#0"><span class="hover-underline">Шорты</span></a>
                                           </li>
                                           <li class="header__submenu-item">
-                                             <a href=#0><span class="hover-underline">Платья</span></a>
+                                             <a href="#0"><span class="hover-underline">Платья</span></a>
                                           </li>
                                           <li class="header__submenu-item">
                                              <a href="#0"><span class="hover-underline">Жакеты</span></a>
@@ -357,19 +368,17 @@
          </div>
 
 
-         <div>
-            <div class="filter__container">
-               <div class="filter__open-block">
-                  <span>Фильтр</span>
-                  <button class="filter__open" type="button">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 5H14" stroke="#010101" stroke-width="1.5" />
-                        <path d="M2 11H14" stroke="#010101" stroke-width="1.5" />
-                        <circle cx="6" cy="5" r="2" fill="#010101" />
-                        <circle cx="10" cy="11" r="2" fill="#010101" />
-                     </svg>
-                  </button>
-               </div>
+         <div class="filter__container">
+            <div class="filter__open-block">
+               <span>Фильтр</span>
+               <button class="filter__open" type="button">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M2 5H14" stroke="#010101" stroke-width="1.5" />
+                     <path d="M2 11H14" stroke="#010101" stroke-width="1.5" />
+                     <circle cx="6" cy="5" r="2" fill="#010101" />
+                     <circle cx="10" cy="11" r="2" fill="#010101" />
+                  </svg>
+               </button>
             </div>
          </div>
 
@@ -592,11 +601,11 @@
                <div class="list-card__body">
                   <div class="list-card__left"></div>
                   <div class="list-card__right change_image">
-                     <div class="slider-card__item swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -611,20 +620,24 @@
                            </button>
                            <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -637,22 +650,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -665,22 +682,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -693,22 +714,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -721,22 +746,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -749,22 +778,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -777,22 +810,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -805,22 +842,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -833,22 +874,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -861,22 +906,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -889,22 +938,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -917,22 +970,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -945,22 +1002,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -973,22 +1034,26 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
-                     <div class="slider-card__item  swiper-slide">
+                     <div class="slider-card__item swiper-slide" itemscope itemtype="http://schema.org/Product">
                         <div class="slider-card__item-image change_img">
-                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy">
-                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy">
+                           <img data-slide="1" src="./img/webp/img-17.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="2" class="hidden" src="./img/webp/img-16.webp" alt="модель одежды" loading="lazy" itemprop="image">
+                           <img data-slide="3" class="hidden" src="./img/webp/img-15.webp" alt="модель одежды" loading="lazy" itemprop="image">
                            <div class="slider-card__change-img">
                               <div class="change-img" data-slide="1"></div>
                               <div class="change-img" data-slide="2"></div>
@@ -1001,14 +1066,18 @@
                                 c0.3-0.3,1.3-1.7,1.2-3.6c0-0.4-0.1-1.1-0.6-2c-0.9-1.5-2.6-2.6-4.3-2.5c-0.5,0-0.9,0.2-1.3,0.3C13.1,5.5,12.2,6.3,11.6,6.9z" />
                               </svg>
                            </button>
-                           <a class="button-capsules-more white-button" href="card.html">Подробнее</a>
+                           <a class="button-capsules-more white-button" href="card.html" itemprop="url">Подробнее</a>
                         </div>
-                        <div class="slider-card__name">Куртка-рубашка стёганая</div>
+                        <meta itemprop="description" content="Куртка-рубашка стёганая">
+                        <div class="slider-card__name" itemprop="name">Куртка-рубашка стёганая</div>
                         <div class="slider-card__data">
-                           <div class="slider-card__cost">12 980 ₽</div>
+                           <div class="slider-card__cost" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                              <span itemprop="price" content="12980.00">12 980</span>
+                              <span itemprop="priceCurrency" content="RUB">₽</span>
+                           </div>
                            <ul class="slider-card__color">
-                              <li class="slider-card__color-item black"></li>
-                              <li class="slider-card__color-item beige"></li>
+                              <li class="slider-card__color-item black" itemprop="color"></li>
+                              <li class="slider-card__color-item beige" itemprop="color"></li>
                            </ul>
                         </div>
                      </div>
@@ -1024,11 +1093,11 @@
                <div class="recently__title border-top-for-section">
                   <h2 class="recently__title-title">Вы недавно <br> смотрели</h2>
                   <div class="recently__title-see-all">
-                     <a href=#0>Смотреть всё</a>
+                     <a href="#0">Смотреть всё</a>
                   </div>
                </div>
             </div>
-            <div class="recently__swiper swiper __container">
+            <div class="recently__swiper swiper swiper__container">
                <div class="swiper-wrapper">
                   <div class="slider-card__item  swiper-slide">
                      <div class="slider-card__item-image change_img">
@@ -1251,7 +1320,7 @@
             <div class="footer__body">
                <div class="footer__shell">
                   <div class="footer__form">
-                     <form id="email-form" action=#0 method="post" name="form-email">
+                     <form id="email-form" action="#0" method="post" name="form-email">
                         <h3 class="footer__form-title">
                            Узнавайте о наших новинках первыми и получайте уникальные предложения, в свой почтовый ящик.
                         </h3>

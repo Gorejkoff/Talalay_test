@@ -2,9 +2,20 @@
 <html lang="ru">
 
 <head>
-   <title>Change Namber</title>
+   <title>Change Number</title>
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
    <meta name="viewport" content="width=device-width">
+
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Black.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Bold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Book.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-ExtraBold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Light.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Medium.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Regular.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-SemiBold.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Steppe/Steppe-Thin.woff2" crossorigin>
+   <link rel="preload" as="font" type="font/woff2" href="./fonts/Inter/Inter-Regular.woff2" crossorigin>
 
    <link rel="stylesheet" href="./css/fonts.css">
    <link rel="stylesheet" href="./css/normalize.css">
@@ -37,7 +48,7 @@
                <div class="header__body">
                   <a href="index.html" class="header__logo">
                      <img class="header__logo-big hidden" width="232" height="10" src="./img/svg/Logo.svg" alt="модель одежды" decoding="async">
-                     <img class="header__logo-smoll" width="14" height="32" src="./img/svg/Logo-2.svg" alt="модель одежды" decoding="async">
+                     <img class="header__logo-small" width="14" height="32" src="./img/svg/Logo-2.svg" alt="модель одежды" decoding="async">
                   </a>
                   <div class="header__menu">
                      <div id="burger-menu" class="header__menu-shell">
@@ -160,7 +171,7 @@
                                              <a href="#0"><span class="hover-underline">Шорты</span></a>
                                           </li>
                                           <li class="header__submenu-item">
-                                             <a href=#0><span class="hover-underline">Платья</span></a>
+                                             <a href="#0"><span class="hover-underline">Платья</span></a>
                                           </li>
                                           <li class="header__submenu-item">
                                              <a href="#0"><span class="hover-underline">Жакеты</span></a>
@@ -195,9 +206,7 @@
                                              <img src="./img/webp/img-13.webp" alt="модель одежды">
                                           </div>
                                        </div>
-
                                     </div>
-
                                  </div>
                               </li>
                               <li class="header__menu-item">
@@ -325,19 +334,16 @@
       <main class="main">
 
 
-         <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+         <nav class="breadcrumb">
             <div class="back__container">
-               <ol>
-                  <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                     <a href="change_number.html" itemprop="item">
-                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M6.1333 10.6732L1.46372 6.00357L6.1333 1.33398" stroke="#010101" stroke-width="1.5" />
-                        </svg>
-                        <span class="hover-underline" itemprop="name">Назад</span>
-                        <meta itemprop="position" content="0">
-                     </a>
-                  </li>
-               </ol>
+               <div class="breadcrumb__item">
+                  <a href="change_number.html">
+                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.1333 10.6732L1.46372 6.00357L6.1333 1.33398" stroke="#010101" stroke-width="1.5" />
+                     </svg>
+                     <span class="hover-underline">Назад</span>
+                  </a>
+               </div>
             </div>
          </nav>
 
@@ -366,7 +372,7 @@
             <div class="footer__body">
                <div class="footer__shell">
                   <div class="footer__form">
-                     <form id="email-form" action=#0 method="post" name="form-email">
+                     <form id="email-form" action="#0" method="post" name="form-email">
                         <h3 class="footer__form-title">
                            Узнавайте о наших новинках первыми и получайте уникальные предложения, в свой почтовый ящик.
                         </h3>

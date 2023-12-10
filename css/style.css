@@ -3506,6 +3506,10 @@ a:hover .hover-line-change::before {
   padding: 15px;
 }
 
+.slider-staps__item.hidden {
+  display: none;
+}
+
 .slider-staps__number {
   position: relative;
   width: 20px;
@@ -6837,6 +6841,12 @@ a:hover .hover-line-change::before {
 
   .slider-staps__item {
     min-height: 220px;
+  }
+
+  .slider-staps__item.hidden {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .buyers__swiper div.slider-version__list {

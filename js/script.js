@@ -652,7 +652,7 @@ window.addEventListener('load', function (event) {
       document.body.addEventListener('mouseout', (event) => {
          if (event.target.closest('.change_img') &&
             event.target.closest('.change_img') !==
-            event.relatedTarget.closest('.change_img')) { returnImg(event) }
+            (event.relatedTarget !== null && event.relatedTarget.closest('.change_img'))) { returnImg(event) }
       })
       function changeImg(event) {
          if (!event.target.closest('.slider-card__favorites') &&

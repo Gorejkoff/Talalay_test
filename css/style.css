@@ -1445,6 +1445,7 @@ a:hover .hover-line-change::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 5px;
 }
 
 .card-template__slider .swiper-pagination-bullet {

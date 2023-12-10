@@ -413,66 +413,80 @@
                      </div>
                      <div class="card-template__color-name">Чёрный</div>
                      <div class="card-template__size">
-                        <div id="card-size-menu" class="card-template__size-menu">
-                           <button id="meaning-size" type="button" class="card-template__size-selected">
+                        <div id="card-size-menu" class="card-template__size-menu tabs">
+                           <button id="meaning-size" type="button" class="card-template__size-selected tabs-button">
                               <span id="meaning-size-text">Выберите размер</span>
                               <img class="card-template__size-arrow" src="./img/svg/arrow-1.svg" alt="стрелка указатель">
                            </button>
-                           <div id="choice-size" class="card-template__size-choice hidden">
-                              <label class="card-template__size-item">
-                                 <input class="hidden" type="radio" name="card_sise" id="card-xs" data-size="xs" required>
-                                 <span class="card-template__size-meaning">
-                                    <span class="card-template__size-meaning-name">xs</span>
-                                    <span class="card-template__size-meaning-check hidden">
-                                       <img src="./img/svg/check.svg" alt="знак выбора">
-                                    </span>
-                                 </span>
-                              </label>
-                              <label class="card-template__size-item">
-                                 <input class="hidden" type="radio" name="card_sise" id="card-s" data-size="s" required>
-                                 <span class="card-template__size-meaning">
-                                    <span class="card-template__size-meaning-name">s</span>
-                                    <span class="card-template__size-meaning-check hidden">
-                                       <img src="./img/svg/check.svg" alt="знак выбора">
-                                    </span>
-                                 </span>
-                              </label>
-                              <label class="card-template__size-item">
-                                 <input class="hidden" type="radio" name="card_sise" id="card-m" data-size="m" required>
-                                 <span class="card-template__size-meaning">
-                                    <span class="card-template__size-meaning-name">m</span>
-                                    <span class="card-template__size-meaning-check hidden">
-                                       <img src="./img/svg/check.svg" alt="знак выбора">
-                                    </span>
-                                 </span>
-                              </label>
-                              <label class="card-template__size-item">
-                                 <input class="hidden" type="radio" name="card_sise" id="card-l" data-size="l" required>
-                                 <span class="card-template__size-meaning">
-                                    <span class="card-template__size-meaning-name">l</span>
-                                    <span class="card-template__size-meaning-check hidden">
-                                       <img src="./img/svg/check.svg" alt="знак выбора">
-                                    </span>
-                                 </span>
-                              </label>
-                              <label class="card-template__size-item">
-                                 <input class="hidden" type="radio" name="card_sise" id="card-xl" data-size="xl" required>
-                                 <span class="card-template__size-meaning">
-                                    <span class="card-template__size-meaning-name">xl</span>
-                                    <span class="card-template__size-meaning-check hidden">
-                                       <img src="./img/svg/check.svg" alt="знак выбора">
-                                    </span>
-                                 </span>
-                              </label>
-                              <label class="card-template__size-item">
-                                 <input class="hidden" type="radio" name="card_sise" id="card-xxl" data-size="xxl" required>
-                                 <span class="card-template__size-meaning">
-                                    <span class="card-template__size-meaning-name">xxl</span>
-                                    <span class="card-template__size-meaning-check hidden">
-                                       <img src="./img/svg/check.svg" alt="знак выбора">
-                                    </span>
-                                 </span>
-                              </label>
+                           <div id="choice-size" class="card-template__size-choice tabs-content">
+                              <ol class="card-template__size-choice-list tabs-content-inner">
+                                 <li>
+                                    <label class="card-template__size-item">
+                                       <input class="hidden" type="radio" name="card_sise" id="card-xs" data-size="xs" required>
+                                       <span class="card-template__size-meaning">
+                                          <span class="card-template__size-meaning-name">xs</span>
+                                          <span class="card-template__size-meaning-check hidden">
+                                             <img src="./img/svg/check.svg" alt="знак выбора">
+                                          </span>
+                                       </span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label class="card-template__size-item">
+                                       <input class="hidden" type="radio" name="card_sise" id="card-s" data-size="s" required>
+                                       <span class="card-template__size-meaning">
+                                          <span class="card-template__size-meaning-name">s</span>
+                                          <span class="card-template__size-meaning-check hidden">
+                                             <img src="./img/svg/check.svg" alt="знак выбора">
+                                          </span>
+                                       </span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label class="card-template__size-item">
+                                       <input class="hidden" type="radio" name="card_sise" id="card-m" data-size="m" required>
+                                       <span class="card-template__size-meaning">
+                                          <span class="card-template__size-meaning-name">m</span>
+                                          <span class="card-template__size-meaning-check hidden">
+                                             <img src="./img/svg/check.svg" alt="знак выбора">
+                                          </span>
+                                       </span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label class="card-template__size-item">
+                                       <input class="hidden" type="radio" name="card_sise" id="card-l" data-size="l" required>
+                                       <span class="card-template__size-meaning">
+                                          <span class="card-template__size-meaning-name">l</span>
+                                          <span class="card-template__size-meaning-check hidden">
+                                             <img src="./img/svg/check.svg" alt="знак выбора">
+                                          </span>
+                                       </span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label class="card-template__size-item">
+                                       <input class="hidden" type="radio" name="card_sise" id="card-xl" data-size="xl" required>
+                                       <span class="card-template__size-meaning">
+                                          <span class="card-template__size-meaning-name">xl</span>
+                                          <span class="card-template__size-meaning-check hidden">
+                                             <img src="./img/svg/check.svg" alt="знак выбора">
+                                          </span>
+                                       </span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label class="card-template__size-item">
+                                       <input class="hidden" type="radio" name="card_sise" id="card-xxl" data-size="xxl" required>
+                                       <span class="card-template__size-meaning">
+                                          <span class="card-template__size-meaning-name">xxl</span>
+                                          <span class="card-template__size-meaning-check hidden">
+                                             <img src="./img/svg/check.svg" alt="знак выбора">
+                                          </span>
+                                       </span>
+                                    </label>
+                                 </li>
+                              </ol>
                            </div>
                         </div>
                      </div>

@@ -376,7 +376,6 @@ window.addEventListener('load', function (event) {
    FILTER_CATALOG && !mediaQuery_1024.matches && addTabClass(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
    FILTER_CATALOG && mediaQuery_1024.matches && removeTabClass(FILTER_CATALOG, FILTER_CATALOG_TITLE, FILTER_CATALOG_CONTENT, FILTER_CATALOG_LIST);
 
-
    if (document.querySelector('.observer-img')) {
       let callback = function (entries, observer) {
          entries.forEach((e) => {
@@ -401,30 +400,10 @@ window.addEventListener('load', function (event) {
       })
    }
 
-   if (document.querySelector('#form-card')) {
-      const FORM_CARD = document.forms.form_card;
-      FORM_CARD.addEventListener('change', (event => {
-         if (event.target.getAttribute('name') == 'card_sise') {
-            MEANING_SIZE_TEXT.innerHTML = event.target.dataset.size;
-            MEANING_SIZE_TEXT.style.textTransform = "uppercase";
-         }
-      }))
-      FORM_CARD_BUTTON.addEventListener('click', (e) => {
-         if (!FORM_CARD.card_sise[0].validity.valid) {
-            CARD_SIZE_MENU.scrollIntoView({ block: 'start', behavior: 'smooth' });
-            CARD_SIZE_MENU.classList.add('active');
-         }
-      })
-   }
    function stopScrollBody() { document.body.style.overflow = 'hidden' };
    function startScrollBody() { document.body.style.overflow = '' };
    /* ==================== общие события click ================= */
    document.body.addEventListener('click', (event) => {
-      if (event.target.closest('#meaning-size') && CARD_SIZE_MENU) {
-         CARD_SIZE_MENU.classList.toggle('active');
-      } else if (CARD_SIZE_MENU && !event.target.closest('#choice-size') && !event.target.closest('#form-card__button')) {
-         CARD_SIZE_MENU.classList.remove('active');
-      }
       if (event.target.closest('.card-template__tabs-button')) {
          event.target.closest('.card-template__tabs-item').classList.toggle('active');
          if (event.target.closest('.card-template__tabs-item').classList.contains('active')) {
@@ -563,7 +542,6 @@ window.addEventListener('load', function (event) {
       }
    }
 
-
    /* управление табами */
    class TabsOpen {
       constructor(tabs, addFunctionResize, addFunctionAction) {
@@ -598,7 +576,7 @@ window.addEventListener('load', function (event) {
          element.querySelector('.tabs-content').style.height = '';
          element.classList.remove('active');
       };
-      getSize = (element) => { return element.querySelector('.tabs-content-inner').clientHeight };
+      getSize = (element) => { return element.querySelector('.tabs-content-inner').clientHeight + 3 };
       externalFunction = () => { this.addFunctionResize() };
    }
    /* проверка, изменение состояния filter__catalog */
@@ -638,6 +616,22 @@ window.addEventListener('load', function (event) {
          event.target.closest('.tabs').querySelector('.show-data').innerHTML
             = event.target.closest('.filter__item').querySelector('.get-data').innerHTML;
       }
+   }
+   /* запись выбранного заначения поле выбора размера card*/
+   if (document.querySelector('#form-card')) {
+      const FORM_CARD = document.forms.form_card;
+      FORM_CARD.addEventListener('change', (event => {
+         if (event.target.getAttribute('name') == 'card_sise') {
+            MEANING_SIZE_TEXT.innerHTML = event.target.dataset.size;
+            MEANING_SIZE_TEXT.style.textTransform = "uppercase";
+         }
+      }))
+      FORM_CARD_BUTTON.addEventListener('click', (event) => {
+         if (!FORM_CARD.card_sise[0].validity.valid) {
+            event.preventDefault();
+            CARD_SIZE_MENU.scrollIntoView({ block: 'start', behavior: 'smooth' });
+         }
+      })
    }
 
    /* перемещение filter__catalog */

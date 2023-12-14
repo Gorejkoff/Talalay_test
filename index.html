@@ -23,13 +23,13 @@
    <link rel="stylesheet" href="./css/style.css?_V=2">
 </head>
 
-<body>
+<body class="body-overflow">
 
 
    <div id="banner-sale" class="banner-sale">
       <div class="banner-sale__container">
          <div class="banner-sale__body">
-            <a href="#0">
+            <a href="#0" class="modal-open" data-modal_open="subscribe-newsletter">
                <span class="banner-sale__text">Sale ― большие скидки! До 20% на зимнюю коллекцию</span>
             </a>
             <button id="banner-sale-close" class="banner-sale__button" type="button">
@@ -282,11 +282,14 @@
                   <div class="header__menu-icons">
                      <ul class="header__menu-icons-lists">
                         <li class="header__menu-icons-item">
-                           <a href="#0">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <button type="button">
+                              <svg class="header__search-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M8.44914 16.2203L2.89779 21.7724M11.0408 17.7471C7.40257 16.2009 5.70667 11.9982 7.25287 8.35997C8.79906 4.72178 13.0018 3.02588 16.64 4.57207C20.2782 6.11827 21.9741 10.321 20.4279 13.9592C18.8817 17.5974 14.679 19.2933 11.0408 17.7471Z" stroke="#010101" stroke-width="1.2" />
                               </svg>
-                           </a>
+                              <svg class="header__search-close" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M21 1L1 21M21 21L1 1" stroke="#010101" />
+                              </svg>
+                           </button>
                         </li>
                         <li class="header__menu-icons-item">
                            <a href="login.html">
@@ -330,6 +333,16 @@
                   </button>
                </div>
             </div>
+            <div class="header__search">
+               <form class="header__search-input" action="#" method="post" name="" id="">
+                  <input type="search" placeholder="ПОИСК">
+                  <button type="submit">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.44914 16.2203L2.89779 21.7724M11.0408 17.7471C7.40257 16.2009 5.70667 11.9982 7.25287 8.35997C8.79906 4.72178 13.0018 3.02588 16.64 4.57207C20.2782 6.11827 21.9741 10.321 20.4279 13.9592C18.8817 17.5974 14.679 19.2933 11.0408 17.7471Z" stroke="#ffffff" stroke-width="1.2" />
+                     </svg>
+                  </button>
+               </form>
+            </div>
          </div>
       </header>
 
@@ -367,7 +380,6 @@
                      <a href="capsule_detail.html"><span class="main-slider__link"><span class="hover-line-change">Посмотреть капсулу</span></span></a>
                   </div>
                </div>
-
             </div>
             <div class="main-slider__pagination slider-pagination__container">
                <div class="main-slider__pagination-body"></div>
@@ -3073,6 +3085,82 @@
 
 
    </div>
+
+
+   <aside class="cookies modal-hidden modal-visible" id="cookies">
+      <div class="cookies__container">
+         <div class="cookies__body">
+            <h3 class="modal-title">Мы используем файлы cookie</h3>
+            <p class="modal-text">К нашему сайту подключен сервис веб-аналитики Яндекс Метрика, использующий cookie — небольшие текстовые файлы, размещаемых на вашем компьютере с целью анализа пользовательской активности. Вы даете свое согласие на обработку персональных данных с помощью этого сервиса в порядке, указанном в Политике конфиденциальности интернет-магазина Alexandra Talalay?</p>
+            <button class="black-button modal-close">Хорошо</button>
+         </div>
+      </div>
+   </aside>
+
+
+   <section class="subscribe-newsletter modal-hidden modal-close" id="subscribe-newsletter">
+      <div class="subscribe-newsletter__container">
+         <div class="subscribe-newsletter__body modal-stop-close">
+            <h3 class="modal-title">
+               <div class="modal-title__text">
+                  Получите скидку 10%, подписавшись на наши любовные письма
+                  <img src="./img/svg/envelope.svg" alt="конверт">
+               </div>
+               <div class="subscribe-newsletter__close">
+                  <svg class="subscribe-newsletter__close-button modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                     <circle cx="12" cy="12" r="12" fill="#010101" />
+                     <path d="M16.5 7.5L7.5 16.5M16.5 16.5L7.5 7.5" stroke="white" stroke-width="1.5" />
+                  </svg>
+               </div>
+            </h3>
+            <form action="#0" method="post" name="subscribe-newsletter" id="subscribe-newsletter">
+               <div class="profile__form-item">
+                  <label for="email" class="profile__form-name">Email</label>
+                  <div class="profile__form-input">
+                     <input type="email" id="email" placeholder="Введите вашу электронную почту" required>
+                  </div>
+               </div>
+               <label class="mailings__item">
+                  <span class="mailings__check">
+                     <input type="checkbox" name="newsletter_email" value="1" required>
+                     <span class="mailings__check-label"></span>
+                  </span>
+                  <span class="mailings__text">
+                     <span class="mailings__text-subtext">Я соглашаюсь на <a href="policy.html" class="hover-change-color">обработку персональных данных</a></span>
+                  </span>
+               </label>
+               <button class="black-button modal-close modal-open" data-modal_open="subscription-completed" type="button">Подписаться</button>
+            </form>
+         </div>
+      </div>
+   </section>
+
+
+   <section class="subscription-completed modal-hidden modal-close" id="subscription-completed">
+      <div class="subscribe-newsletter__container">
+         <div class="subscribe-newsletter__body modal-stop-close">
+            <div class="subscription-completed__check">
+               <div class="subscription-completed__check-img">
+                  <img src="./img/svg/green_arrow.svg" alt="">
+               </div>
+               <div class="subscribe-newsletter__close">
+                  <svg class="subscribe-newsletter__close-button modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                     <circle cx="12" cy="12" r="12" fill="#010101" />
+                     <path d="M16.5 7.5L7.5 16.5M16.5 16.5L7.5 7.5" stroke="white" stroke-width="1.5" />
+                  </svg>
+               </div>
+            </div>
+            <h3 class="modal-title">
+               <div class="modal-title__text">
+                  Вы успешно подписались на email-рассылку
+                  <img src="./img/svg/envelope.svg" alt="конверт">
+               </div>
+            </h3>
+            <p class="modal-text">Промокод на скидку 10% отправлен на ваш email.</p>
+            <button class="black-button modal-close" type="button">Окей, спасибо!</button>
+         </div>
+      </div>
+   </section>
 
 
    <script defer src="js/swiper-bundle.min.js"></script>

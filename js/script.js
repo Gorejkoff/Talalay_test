@@ -437,6 +437,8 @@ window.addEventListener('load', function (event) {
          event.target.closest('.forms__shell').querySelector('.forms__password-visible').classList.remove('hidden');
          event.target.closest('.forms__shell').querySelector('.forms__password-hidden').classList.add('hidden');
       }
+      if (event.target.closest('.header__search-open')) { HEADER.classList.add("search-active") };
+      if (event.target.closest('.header__search-close')) { HEADER.classList.remove("search-active") };
    })
 
    if (document.querySelector('.capsules-template__product-availability')) {
@@ -795,10 +797,10 @@ if (document.querySelector('.get-address__buttons')) {
 }
 
 /* открывает, закрывает модальные окна. */
-if (document.querySelector('.modal-open')) {
+if (document.querySelector('.modal-open') || document.querySelector('.modal-close')) {
    document.addEventListener('click', (event) => {
-      if (event.target.closest('.modal-open')) { openModal(event) }
       if (event.target.closest('.modal-close')) { testModalStopClose(event) }
+      if (event.target.closest('.modal-open')) { openModal(event) }
    })
 }
 function openModal(event) {
@@ -810,8 +812,7 @@ function openModal(event) {
 }
 function testModalStopClose(event) {
    if (event.target.closest('.modal-stop-close') &&
-      event.target.closest('.modal-close') !==
-      event.target.closest('.modal-stop-close').querySelector('.modal-close')) {
+      !event.target.closest('.modal-close').closest('.modal-stop-close')) {
       return
    }
    closeModal(event);

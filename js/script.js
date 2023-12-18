@@ -850,3 +850,18 @@ if (document.forms.mailings_email && document.forms.mailings_sms) {
       }
    }
 }
+
+/* отключение прокрутки пока видно модалка cookies */
+if (document.querySelector('#cookies')) {
+   document.body.classList.add('body-overflow');
+}
+/* показать модалку modal-cashback */
+if (document.querySelector('#modal-cashback')) {
+   window.addEventListener('load', showModalCashback);
+}
+function showModalCashback() {
+   setTimeout(() => {
+      document.querySelector('#modal-cashback').classList.add('modal-visible')
+      document.body.classList.add('body-overflow')
+   }, 4000)
+}

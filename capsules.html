@@ -282,11 +282,14 @@
 						<div class="header__menu-icons">
 							<ul class="header__menu-icons-lists">
 								<li class="header__menu-icons-item">
-									<a href="#0">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<button type="button">
+										<svg class="header__search-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M8.44914 16.2203L2.89779 21.7724M11.0408 17.7471C7.40257 16.2009 5.70667 11.9982 7.25287 8.35997C8.79906 4.72178 13.0018 3.02588 16.64 4.57207C20.2782 6.11827 21.9741 10.321 20.4279 13.9592C18.8817 17.5974 14.679 19.2933 11.0408 17.7471Z" stroke="#010101" stroke-width="1.2" />
 										</svg>
-									</a>
+										<svg class="header__search-close" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M21 1L1 21M21 21L1 1" stroke="#010101" />
+										</svg>
+									</button>
 								</li>
 								<li class="header__menu-icons-item">
 									<a href="login.html">
@@ -328,6 +331,18 @@
 								<span class="burger__line burger__line-bottom"></span>
 							</span>
 						</button>
+					</div>
+				</div>
+				<div class="header__search">
+					<div class="header__header-container">
+						<form class="header__search-input" action="#" method="post" name="" id="">
+							<input type="search" placeholder="ПОИСК">
+							<a href="search.html">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.44914 16.2203L2.89779 21.7724M11.0408 17.7471C7.40257 16.2009 5.70667 11.9982 7.25287 8.35997C8.79906 4.72178 13.0018 3.02588 16.64 4.57207C20.2782 6.11827 21.9741 10.321 20.4279 13.9592C18.8817 17.5974 14.679 19.2933 11.0408 17.7471Z" stroke="#ffffff" stroke-width="1.2" />
+								</svg>
+							</a>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -851,6 +866,17 @@
 
 
 	</div>
+
+
+	<aside class="cookies modal-hidden modal-visible" id="cookies">
+		<div class="cookies__container">
+			<div class="cookies__body">
+				<h3 class="modal-title">Мы используем файлы cookie</h3>
+				<p class="modal-text">К нашему сайту подключен сервис веб-аналитики Яндекс Метрика, использующий cookie — небольшие текстовые файлы, размещаемых на вашем компьютере с целью анализа пользовательской активности. Вы даете свое согласие на обработку персональных данных с помощью этого сервиса в порядке, указанном в Политике конфиденциальности интернет-магазина Alexandra Talalay?</p>
+				<button class="black-button modal-close">Хорошо</button>
+			</div>
+		</div>
+	</aside>
 
 
 	<script defer src="js/swiper-bundle.min.js"></script>

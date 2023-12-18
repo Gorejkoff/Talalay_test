@@ -23,7 +23,7 @@
    <link rel="stylesheet" href="./css/style.css?_V=2">
 </head>
 
-<body class="body-overflow">
+<body>
 
 
    <div id="banner-sale" class="banner-sale">
@@ -334,14 +334,16 @@
                </div>
             </div>
             <div class="header__search">
-               <form class="header__search-input" action="#" method="post" name="" id="">
-                  <input type="search" placeholder="ПОИСК">
-                  <button type="submit">
-                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.44914 16.2203L2.89779 21.7724M11.0408 17.7471C7.40257 16.2009 5.70667 11.9982 7.25287 8.35997C8.79906 4.72178 13.0018 3.02588 16.64 4.57207C20.2782 6.11827 21.9741 10.321 20.4279 13.9592C18.8817 17.5974 14.679 19.2933 11.0408 17.7471Z" stroke="#ffffff" stroke-width="1.2" />
-                     </svg>
-                  </button>
-               </form>
+               <div class="header__header-container">
+                  <form class="header__search-input" action="#" method="post" name="" id="">
+                     <input type="search" placeholder="ПОИСК">
+                     <a href="search.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M8.44914 16.2203L2.89779 21.7724M11.0408 17.7471C7.40257 16.2009 5.70667 11.9982 7.25287 8.35997C8.79906 4.72178 13.0018 3.02588 16.64 4.57207C20.2782 6.11827 21.9741 10.321 20.4279 13.9592C18.8817 17.5974 14.679 19.2933 11.0408 17.7471Z" stroke="#ffffff" stroke-width="1.2" />
+                        </svg>
+                     </a>
+                  </form>
+               </div>
             </div>
          </div>
       </header>
@@ -3158,32 +3160,6 @@
             </h3>
             <p class="modal-text">Промокод на скидку 10% отправлен на ваш email.</p>
             <button class="black-button modal-close" type="button">Окей, спасибо!</button>
-         </div>
-      </div>
-   </section>
-
-
-   <section class="modal-cashback modal-hidden modal-visible modal-close" id="modal-cashback">
-      <div class="modal-cashback__container">
-         <div class="modal-cashback__body modal-stop-close">
-            <div class="modal-cashback__image">
-               <img src="./img/webp/spring/image-5.webp" alt="фото модели платья">
-            </div>
-            <div class="modal-cashback__content">
-               <div class="modal-cashback__close">
-                  <svg class="subscribe-newsletter__close-button modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                     <circle cx="12" cy="12" r="12" fill="#010101" />
-                     <path d="M16.5 7.5L7.5 16.5M16.5 16.5L7.5 7.5" stroke="white" stroke-width="1.5" />
-                  </svg>
-               </div>
-               <h3 class="modal-title">
-                  <div class="modal-title__text">
-                     Зарегистри&shy;руйтесь на сайте и получайте кешбек с баллами с каждой покупки
-                  </div>
-               </h3>
-               <a href="login.html" class="modal-cashback__link black-button">Зарегистрироваться</a>
-            </div>
-
          </div>
       </div>
    </section>

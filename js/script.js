@@ -851,10 +851,7 @@ if (document.forms.mailings_email && document.forms.mailings_sms) {
    }
 }
 
-/* отключение прокрутки пока видно модалка cookies */
-if (document.querySelector('#cookies')) {
-   document.body.classList.add('body-overflow');
-}
+
 /* показать модалку modal-cashback */
 if (document.querySelector('#modal-cashback')) {
    window.addEventListener('load', showModalCashback);

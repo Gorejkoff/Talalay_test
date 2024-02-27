@@ -7748,9 +7748,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .pagination a {
-  padding: 10px 11px 7px;
+  padding: 7px 9px 4px;
   display: inline-block;
-  font-size: 24px;
+  font-size: var(--font-16);
   min-height: 100%;
   border: 1px solid var(--color-black);
   -webkit-transition: all 0.22s;
@@ -7777,7 +7777,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .pagination .previous a,
 .pagination .next a {
-  padding: 0 11px;
+  padding: 0 9px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7789,7 +7789,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .pagination .previous img,
 .pagination .next img {
-  min-height: 20px;
+  min-height: var(--font-16);
 }
 
 .pagination li.ellipsis a {

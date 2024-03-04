@@ -38,6 +38,7 @@ window.addEventListener('load', function (event) {
    const BURGER_BUTTON = document.querySelector('#burger-button');
    const BURGER_MENU = document.querySelector('#burger-menu');
    const HEADER_MENU_ITEM = document.querySelectorAll('.header__menu-item');
+   const MEANING_SIZE = document.querySelector('#meaning-size');
    const MEANING_SIZE_TEXT = document.querySelector('#meaning-size-text');
    const CARD_SIZE_MENU = document.querySelector('#card-size-menu');
    const FORM_CARD_BUTTON = document.querySelector('#form-card__button');
@@ -631,7 +632,8 @@ window.addEventListener('load', function (event) {
       FORM_CARD_BUTTON.addEventListener('click', (event) => {
          if (!FORM_CARD.card_sise[0].validity.valid) {
             event.preventDefault();
-            CARD_SIZE_MENU.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            !mediaQuery_1024.matches && CARD_SIZE_MENU.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            setTimeout(() => MEANING_SIZE.click(), 100)
          }
       })
    }

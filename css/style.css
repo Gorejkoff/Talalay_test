@@ -1268,10 +1268,10 @@ a:hover .hover-line-change::before {
   transition: all 0.22s;
 }
 
-.card__decrement:hover rect,
-.card__increment:hover rect,
-.card__decrement:hover path,
-.card__increment:hover path {
+._pc .card__decrement:hover rect,
+._pc .card__increment:hover rect,
+._pc .card__decrement:hover path,
+._pc .card__increment:hover path {
   stroke: var(--color-white);
   fill: var(--color-black);
 }

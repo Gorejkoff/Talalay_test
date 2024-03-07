@@ -440,6 +440,14 @@ window.addEventListener('load', function (event) {
       }
       if (event.target.closest('.header__search-open')) { HEADER.classList.add("search-active") };
       if (event.target.closest('.header__search-close')) { HEADER.classList.remove("search-active") };
+      if (event.target.closest('.card__increment')) {
+         let element = event.target.closest('.card__quantity').querySelector('.card__quantity-item');
+         element.innerHTML = element.innerHTML < 99 ? ++element.innerHTML : 99;
+      }
+      if (event.target.closest('.card__decrement')) {
+         let element = event.target.closest('.card__quantity').querySelector('.card__quantity-item');
+         element.innerHTML = element.innerHTML <= 1 ? 1 : --element.innerHTML;
+      }
    })
 
    if (document.querySelector('.capsules-template__product-availability')) {

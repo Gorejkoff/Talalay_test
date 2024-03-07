@@ -330,15 +330,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 }
 
-#registration-offer .black-button {
-  margin-bottom: 5px;
-}
-
-#registration-offer .black-button,
-#registration-offer .white-button {
-  width: 100%;
-}
-
 .border-top-for-section {
   padding-top: 30px;
   border-top: 1px solid var(--color-black);
@@ -1233,6 +1224,7 @@ a:hover .hover-line-change::before {
   -webkit-column-gap: 15px;
   -moz-column-gap: 15px;
   column-gap: 15px;
+  margin-bottom: 15px;
 }
 
 .slider-card__cost {
@@ -1265,6 +1257,23 @@ a:hover .hover-line-change::before {
 .recently__swiper {
   position: relative;
   width: 100%;
+}
+
+.card__decrement rect,
+.card__increment rect,
+.card__decrement path,
+.card__increment path {
+  -webkit-transition: all 0.22s;
+  -o-transition: all 0.22s;
+  transition: all 0.22s;
+}
+
+.card__decrement:hover rect,
+.card__increment:hover rect,
+.card__decrement:hover path,
+.card__increment:hover path {
+  stroke: var(--color-white);
+  fill: var(--color-black);
 }
 
 /* ====== swiper recently =======*/
@@ -5318,10 +5327,23 @@ ol .card-template__tabs-text-list {
   margin-bottom: 15px;
 }
 
+.registration-offer__check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.registration-offer__check-img,
 .subscription-completed__check-img {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+
+.registration-offer__check-img {
+  padding-left: 24px;
+  text-align: center;
 }
 
 .subscription-completed .modal-title {
@@ -5384,6 +5406,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 /* ===== cookies ===== */
+.registration-offer,
 .modal-cashback,
 .subscription-completed,
 .subscribe-newsletter,
@@ -5404,6 +5427,7 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: transparent;
 }
 
+.registration-offer__container,
 .modal-cashback__container,
 .subscribe-newsletter__container {
   position: relative;
@@ -5419,6 +5443,7 @@ input[type="search"]::-webkit-search-results-decoration {
   min-height: 100%;
 }
 
+.registration-offer__body,
 .modal-cashback__body,
 .subscribe-newsletter__body,
 .cookies__body {
@@ -5454,7 +5479,6 @@ input[type="search"]::-webkit-search-results-decoration {
   position: relative;
   width: 100%;
   min-height: 350px;
-
 }
 
 .modal-cashback__image img {
@@ -5514,6 +5538,33 @@ input[type="search"]::-webkit-search-results-decoration {
   line-height: 145%;
 }
 
+.registration-offer__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+#registration-offer .modal-text,
+#registration-offer .modal-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#registration-offer .modal-text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 330px;
+}
+
+.registration-offer__buttons .white-button {
+  border: 1px solid var(--color-black);
+}
+
 .subscribe-newsletter .modal-title {
   margin-bottom: 30px;
   display: -webkit-box;
@@ -5536,6 +5587,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 30px;
 }
 
+.registration-offer__close,
 .subscribe-newsletter__close {
   transform: translate(15px, -15px);
   cursor: pointer;
@@ -6419,6 +6471,7 @@ input[type="search"]::-webkit-search-results-decoration {
     font-size: 30px;
   }
 
+  .registration-offer__body,
   .modal-cashback__body,
   .subscribe-newsletter__body {
     position: absolute;
@@ -6428,6 +6481,10 @@ input[type="search"]::-webkit-search-results-decoration {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     max-width: 682px;
+  }
+
+  .registration-offer__body {
+    max-width: 445px;
   }
 
   .modal-cashback__body {
@@ -6459,6 +6516,22 @@ input[type="search"]::-webkit-search-results-decoration {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.card__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.card__quantity-item {
+  width: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
 }
 
 @media (min-width: 768px) and (max-width: 1023.98px) {
@@ -7777,6 +7850,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @media (max-height:600px) {
 
+  .registration-offer__body,
   .modal-cashback__body,
   .subscribe-newsletter__body {
     position: relative;

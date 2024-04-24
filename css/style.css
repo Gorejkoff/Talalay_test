@@ -2976,6 +2976,10 @@ ol .card-template__tabs-text-list {
   padding-top: 20px;
 }
 
+.filter__catalog-list::-webkit-scrollbar {
+  display: none;
+}
+
 .filter__catalog-list a {
   display: inline-block;
   padding: 7px 0;
@@ -7226,7 +7230,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
   .filter__catalog-list a {
     display: block;
-    margin-left: -15px;
     padding: 15px;
     -webkit-transition: background-color 0.12s;
     -o-transition: background-color 0.12s;
